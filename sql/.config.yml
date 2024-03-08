@@ -1,0 +1,15 @@
+# Set to true to use lowercase keywords instead of uppercase.
+lowercaseKeywords: false
+connections:
+    - alias: individual_mysql
+    driver: postgresql
+    proto: tcp
+    user: admin
+    passwd: password
+    host: 127.0.0.1
+    port: 4505
+    dbName: apiTypeorm
+    params:
+      autocommit: "true"
+      tls: skip-verify
+  

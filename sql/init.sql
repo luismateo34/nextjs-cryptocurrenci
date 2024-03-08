@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS api_typeorm;
+CREATE DATABASE api_typeorm;
+
