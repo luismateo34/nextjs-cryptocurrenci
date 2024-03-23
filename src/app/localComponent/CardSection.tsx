@@ -5,7 +5,7 @@ import blockchain from "@/images/blockchain-element.png";
 
 export const CardSection = () => {
   return (
-    <section className="min-h-screen w-full  snap-center flex flex-row items-center justify-around flex-wrap">
+    <section className="min-h-screen  w-screen  flex flex-row items-center justify-around flex-wrap">
       <CardImage image={cardano.src} alt="cardano image">
         <p>
           Ante tempor convallis, dictum ac et amet integer placerat dictumst

@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import { NavBar } from "@/components/navbar";
 import "./globals.css";
-import { Suspense } from "react";
-import Loading from "./loading";
 
 const inter = Raleway({ subsets: ["latin"] });
 
@@ -21,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} bg-blue-950 text-white`}>
         <NavBar primary={true} size="medium" />
-        <Suspense fallback={<Loading />}>{children}</Suspense>
+        {children}
       </body>
     </html>
   );
