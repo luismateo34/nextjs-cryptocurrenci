@@ -1,9 +1,0 @@
-{
-  "name": "pgsql-api",
-  "adapter": "postgres",
-  "host": "localhost",
-  "port": 4505,
-  "user": "admin",
-  "password": "password",
-  "database": "api_typeorm"
-}
