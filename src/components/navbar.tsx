@@ -25,7 +25,7 @@ export const NavBar = ({
     other: "/other",
   };
   return (
-    <nav className="w-full h-12 pt-2 block sticky top-0 z-10 border-solid border-b-2 border-b-yellow-400">
+    <nav className="w-full h-12 py-1 block sticky top-0 z-10 border-solid border-b-2 border-b-yellow-400">
       <ul className="w-full h-full flex flex-row gap-2 justify-around items-end">
         {Object.entries(routerObj).map(([key, value]) => {
           if (router !== value)

@@ -8,9 +8,11 @@ const options = {
   headers: { "x-cg-demo-api-key": "CG-BWqAE8awtCSzBdWSGU6fFWWT" },
 };
 
+
 fetch(url, options)
   .then((res) => res.json())
   .then(async (json) => {
+    //console.log(json)
     await prisma.listnamecripto.createMany({
       data: json,
       skipDuplicates: true,
