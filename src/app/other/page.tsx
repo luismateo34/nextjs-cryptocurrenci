@@ -1,3 +1,5 @@
+import {GrafBar} from "@/components/grafBar"
+
 export default function Home() {
   return (
     <>
@@ -6,6 +8,7 @@ export default function Home() {
         Elit convallis tempor pellentesque cras dignissim tempor vestibulum
         nulla, odio nunc lacus id odio convallis nunc sed cras ornare, in.
       </p>
+     <GrafBar/>
     </>
   );
 }

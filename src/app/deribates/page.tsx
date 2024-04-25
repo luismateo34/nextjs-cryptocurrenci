@@ -1,11 +1,16 @@
-export default function Home() {
+import { TableDerivate } from "@/app/deribates/localcomponets/tableDerivate";
+import {DashBoard } from "@/app/deribates/localcomponets/clientComponent/dashboard"
+
+export default async function Home() {
   return (
     <>
       <h1>crypto market</h1>
-      <p>
-        Elit convallis tempor pellentesque cras dignissim tempor vestibulum
-        nulla, odio nunc lacus id odio convallis nunc sed cras ornare, in.
-      </p>
+      <div className="flex flex-row ">
+        <section className=" snap-y  w-5/12 h-4/6 overflow-y-scroll overflow-x-hidden  scroll-smooth  ">
+          <TableDerivate />
+        </section>
+	<DashBoard/>
+      </div>
     </>
   );
 }

@@ -4,10 +4,10 @@ export default function Home() {
   return (
     <>
       <div className="snap-center ">
-      <MainSection />
+        <MainSection />
       </div>
       <div className="snap-center ">
-      <CardSection  />
+        <CardSection />
       </div>
     </>
   );
