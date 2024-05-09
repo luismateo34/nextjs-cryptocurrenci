@@ -1,14 +1,6 @@
 import { create } from "zustand";
+import {Date} from "@/types/derivatives.types"
 
-export interface Date {
-  symbol: string;
-  price_percentage_change_24h: number;
-  contract_type: string;
-  price: string;
-  market: string;
-  volume_24h: number;
-  spread: undefined | number;
-}
 interface Action{
   resetDate: () => void;
   newDate: (state: Date) => void;

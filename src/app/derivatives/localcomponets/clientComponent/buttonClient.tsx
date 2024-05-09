@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { Store, type Date } from "@/app/deribates/localcomponets/store/store";
+import { Store } from "@/app/derivatives/localcomponets/store/store";
+import { type Date } from "@/types/derivatives.types"
 import { FC } from "react";
 
 interface ButtonType extends Date {

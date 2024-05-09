@@ -20,7 +20,7 @@ export const NavBar = ({
   const routerObj = {
     home: "/",
     coin: "/coin",
-    deribates: "/deribates",
+    derivatives: "/derivatives",
     other: "/other",
   };
   return (

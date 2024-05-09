@@ -1,5 +1,5 @@
-import { data } from "@/app/coin/localComponent/fechTable";
-import { ButtonTable } from "@/app/coin/localComponent/buttonTable";
+import { data } from "@/app/coin/localComponent/functions/fechTable";
+import { ButtonTable } from "@/app/coin/localComponent/clientComponent/buttonTable";
 
 export const TableCoint = async ({ name }: { name: string }) => {
   const coint = await data(name);

@@ -1,4 +1,4 @@
-import { Root } from "@/types/types.coin";
+import { Root } from "@/types/coin.types";
 const key = process.env.API_COINT;
 const options = {
   method: "GET",

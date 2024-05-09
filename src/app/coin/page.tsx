@@ -1,4 +1,4 @@
-import { SearchInput } from "@/app/coin/localComponent/searchInput";
+import { SearchInput } from "@/app/coin/localComponent/clientComponent/searchInput";
 import { TableCoint } from "@/app/coin/localComponent/tableCoint";
 import { Suspense } from "react";
 import {TableSkeleton} from "@/app/coin/localComponent/tableSkeleton"

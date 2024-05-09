@@ -1,4 +1,4 @@
-import {jsonCoint, Coint} from "@/types/json.coin"
+import {jsonCoint, Coint} from "@/types/jsonCoin.types"
 
 const url = process.env.DOMAIN_URL;
 //const port = process.env.PORT;

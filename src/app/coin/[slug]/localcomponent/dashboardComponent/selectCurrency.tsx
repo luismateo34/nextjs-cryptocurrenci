@@ -9,7 +9,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
-import {currency} from "@/types/types.coin"
+import {currency} from "@/types/coin.types"
 const currencyARR: currency[] = ["usd", "sek","gbp","nok","cny","brl","nzd","sgd","aud","eur","jpg","mxn"]
 
 export const SelectCurrency = () => {

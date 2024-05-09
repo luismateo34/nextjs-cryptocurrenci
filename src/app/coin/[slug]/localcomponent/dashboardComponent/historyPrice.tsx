@@ -1,4 +1,4 @@
-import { currency } from "@/types/types.coin";
+import { type currency } from "@/types/coin.types";
 import { GraficLine } from "@/components/linearGraf";
 const key = process.env.API_COINT;
 const options = {
