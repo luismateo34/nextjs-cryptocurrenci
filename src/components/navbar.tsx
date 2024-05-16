@@ -9,6 +9,12 @@ interface TypeNav {
   size: "small" | "medium" | "big";
   className?: string;
 }
+const routerObj = {
+  home: "/",
+  coin: "/coin",
+  derivatives: "/derivatives",
+  other: "/other",
+};
 
 export const NavBar = ({
   primary = true,
@@ -17,14 +23,11 @@ export const NavBar = ({
 }: TypeNav) => {
   const router = usePathname();
 
-  const routerObj = {
-    home: "/",
-    coin: "/coin",
-    derivatives: "/derivatives",
-    other: "/other",
-  };
-  return (
-    <nav className="w-full h-12 py-1 block sticky top-0 z-10 border-solid border-b-2 border-b-yellow-400 bg-black/30">
+   return (
+    <div className="w-screen block sticky top-0 z-10 backdrop-blur-md shadow-md bg-whibg-blue-900/20 shadow-yellow-300/60 ">
+    <nav
+      className={`w-full h-12  block border-solid border-b-2 border-b-yellow-400 bg-black/20 `}
+    >
       <ul className="w-full h-full flex flex-row gap-2 justify-around items-end">
         {Object.entries(routerObj).map(([key, value]) => {
           if (router !== value)
@@ -58,5 +61,7 @@ export const NavBar = ({
         })}
       </ul>
     </nav>
-  );
+
+    </div>
+      );
 };

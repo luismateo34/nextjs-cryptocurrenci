@@ -20,7 +20,7 @@ export const SelectDay = () => {
   const value =
     param.get("days") === undefined
       ? "30"
-      : (param.get("currency") as string);
+      : (param.get("days") as string);
   const handelChange = (valueDay: string) => {
     if (valueDay) {
       param.set("days", valueDay);
@@ -37,7 +37,7 @@ export const SelectDay = () => {
       name="select"
     >
       <SelectTrigger className="w-[180px]">
-        <SelectValue placeholder="Select currency" />
+        <SelectValue placeholder="Select  days interval" />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>

@@ -11,10 +11,9 @@ export const RowTable: FC<Date> = ({
   price_percentage_change_24h,
 }) => {
   return (
-    <tr key={symbol} className="w-full h-[10vh] flex flex-row justify-around gap-2">
-      <td>{symbol}</td>
-      <td>{price}</td>
-      <td>
+    <tr key={symbol} className="w-full h-[10vh] grid grid-cols-2  gap-2">
+      <td className="col-start-1 col-end-2 place-self-center">{symbol}</td>
+      <td className="col-start-2 col-end-3 place-self-center">
         <ButtonClient
           key={symbol}
           price={price}
@@ -25,7 +24,7 @@ export const RowTable: FC<Date> = ({
           contract_type={contract_type}
           price_percentage_change_24h={price_percentage_change_24h}
         >
-          {symbol}
+          view date
         </ButtonClient>
       </td>
     </tr>

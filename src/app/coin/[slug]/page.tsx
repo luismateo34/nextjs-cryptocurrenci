@@ -3,7 +3,7 @@ import {HistoryPrice} from "@/app/coin/[slug]/localcomponent/dashboardComponent/
 import {SelectCurrency} from "@/app/coin/[slug]/localcomponent/dashboardComponent/selectCurrency"
 import {SelectDay } from "@/app/coin/[slug]/localcomponent/dashboardComponent/selectDay"
 import {dataCoin} from "@/app/coin/[slug]/localcomponent/functionFetch/dataCoin"
-import {currency} from "@/types/types.coin"
+import {currency} from "@/types/coin.types"
 
 
 export default async function Page({

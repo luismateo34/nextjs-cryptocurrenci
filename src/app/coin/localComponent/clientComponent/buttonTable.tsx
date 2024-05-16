@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { useRouter, usePathname } from "next/navigation";
+import { store } from "@/app/coin/localComponent/clientComponent/loader/storeLoader";
 
 export const ButtonTable = ({
   name,
@@ -16,9 +17,14 @@ export const ButtonTable = ({
   const redirect = () => {
     router.push(`${pathname}/${name}?ids=${ids}`);
   };
-
+  const { active } = store((state) => state);
   return (
-    <Button onClick={redirect} className={className}>
+    <Button
+      onClick={() => {
+        redirect(), active();
+      }}
+      className={className}
+    >
       {name}
     </Button>
   );

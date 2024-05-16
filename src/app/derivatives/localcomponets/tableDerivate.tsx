@@ -4,16 +4,14 @@ import { RowTable } from "@/app/derivatives/localcomponets/tableRow";
 import { Suspense } from "react";
 import { TableSkeleton } from "@/app/derivatives/localcomponets/tableSkeleton";
 
-export const TableDerivate = async () => {
+export const TableDerivate = async ({className}:{className?:string}) => {
   const derivDate = await fetchDerivate(1);
   return (
-    <table className="flex flex-col justify-around gap-2  w-1/2 h-5/6">
-      <caption>Derivate</caption>
-      <thead className="w-full">
-        <tr>
-          <th>name</th>
-          <th>price</th>
-          <th>stadistic</th>
+    <table className={`flex flex-col justify-around gap-2  w-full h-full ${className}`}>
+      <thead className="w-full h-12">
+        <tr className=" grid grid-cols-2 ">
+          <th className="col-start-1 col-end-2">name</th>
+          <th className="col-start-2 col-end-3">stadistic</th>
         </tr>
       </thead>
       <tbody className="w-full h-max flex flex-col justify-around gap-2 ">

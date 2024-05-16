@@ -6,6 +6,7 @@ import { FC } from "react";
 
 interface ButtonType extends Date {
   children: string;
+  className?: string;
 }
 
 export const ButtonClient: FC<ButtonType> = ({
@@ -17,10 +18,12 @@ export const ButtonClient: FC<ButtonType> = ({
   symbol,
   volume_24h,
   children,
+  className,
 }) => {
   const buildStore = Store((state) => state.newDate);
   return (
     <Button
+      className={`${className} flex flex-row items-center`}
       onClick={() => {
         buildStore({
           contract_type,
