@@ -1,16 +1,7 @@
 "use client";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 
-const intervalay = [ "7", "14", "21", "30", "60", "90", "180", "365"];
+const intervalday = [ "7", "14", "21", "30", "60", "90", "180", "365"];
 
 export const SelectDay = () => {
   const searchParams = useSearchParams();
@@ -30,25 +21,26 @@ export const SelectDay = () => {
     replace(`${pathname}?${param.toString()}`);
   };
   return (
-    <Select
-      value={value}
-      defaultValue="30"
-      onValueChange={handelChange}
-      name="select"
-    >
-      <SelectTrigger className="w-[180px]">
-        <SelectValue placeholder="Select  days interval" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectGroup>
-          <SelectLabel>currency</SelectLabel>
-          {intervalay.map((el) => (
-            <SelectItem key={el} value={el.toString()}>
-              {el}
-            </SelectItem>
-          ))}
-        </SelectGroup>
-      </SelectContent>
-    </Select>
-  );
+<label>
+      select currency
+      <select
+        value={value}
+        onChange={(e) => {
+          handelChange(e.target.value);
+        }}
+        className="w-44 h-5 block text-black bg-orange-400 rounded-sm"
+      >
+        <option disabled={true} value="">
+          select currency
+        </option>
+        {intervalday.map((el) => (
+          <option value={el} key={el}>
+            {el}
+          </option>
+        ))}
+      </select>
+    </label>
+
+
+      );
 };

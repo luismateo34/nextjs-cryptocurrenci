@@ -34,7 +34,6 @@ export interface Root2 {
 export type currency =
   | "usd"
   | "eur"
-  | "jpg"
   | "sgd"
   | "aud"
   | "nzd"

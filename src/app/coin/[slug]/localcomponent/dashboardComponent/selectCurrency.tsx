@@ -1,16 +1,19 @@
 "use client";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
-import {currency} from "@/types/coin.types"
-const currencyARR: currency[] = ["usd", "sek","gbp","nok","cny","brl","nzd","sgd","aud","eur","jpg","mxn"]
+import { currency } from "@/types/coin.types";
+const currencyARR: currency[] = [
+  "usd",
+  "sek",
+  "gbp",
+  "nok",
+  "cny",
+  "brl",
+  "nzd",
+  "sgd",
+  "aud",
+  "eur",
+  "mxn",
+];
 
 export const SelectCurrency = () => {
   const searchParams = useSearchParams();
@@ -30,25 +33,24 @@ export const SelectCurrency = () => {
     replace(`${pathname}?${param.toString()}`);
   };
   return (
-    <Select
-      value={value}
-      defaultValue="usd"
-      onValueChange={handelChange}
-      name="select"
-    >
-      <SelectTrigger className="w-[180px]">
-        <SelectValue placeholder="Select currency" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectGroup>
-          <SelectLabel>currency</SelectLabel>
-          {currencyARR.map((el) => (
-            <SelectItem key={el} value={el}>
-              {el}
-            </SelectItem>
-          ))}
-        </SelectGroup>
-      </SelectContent>
-    </Select>
+    <label>
+      select currency
+      <select
+        value={value}
+        onChange={(e) => {
+          handelChange(e.target.value);
+        }}
+        className="w-44 h-5 block text-black bg-orange-400 rounded-sm"
+      >
+        <option disabled={true} value="">
+          select currency
+        </option>
+        {currencyARR.map((el) => (
+          <option value={el} key={el}>
+            {el}
+          </option>
+        ))}
+      </select>
+    </label>
   );
 };
