@@ -1,7 +1,7 @@
 "use client";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 
-const intervalday = [ "7", "14", "21", "30", "60", "90", "180", "365"];
+const intervalday = ["7", "14", "21", "30", "60", "90", "180", "365"];
 
 export const SelectDay = () => {
   const searchParams = useSearchParams();
@@ -9,9 +9,7 @@ export const SelectDay = () => {
   const { replace } = useRouter();
   const param = new URLSearchParams(searchParams);
   const value =
-    param.get("days") === undefined
-      ? "30"
-      : (param.get("days") as string);
+    param.get("days") === undefined ? "30" : (param.get("days") as string);
   const handelChange = (valueDay: string) => {
     if (valueDay) {
       param.set("days", valueDay);
@@ -21,8 +19,8 @@ export const SelectDay = () => {
     replace(`${pathname}?${param.toString()}`);
   };
   return (
-<label>
-      select currency
+    <label>
+      select day
       <select
         value={value}
         onChange={(e) => {
@@ -31,7 +29,7 @@ export const SelectDay = () => {
         className="w-44 h-5 block text-black bg-orange-400 rounded-sm"
       >
         <option disabled={true} value="">
-          select currency
+          select day
         </option>
         {intervalday.map((el) => (
           <option value={el} key={el}>
@@ -40,7 +38,5 @@ export const SelectDay = () => {
         ))}
       </select>
     </label>
-
-
-      );
+  );
 };

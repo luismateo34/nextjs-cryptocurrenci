@@ -32,7 +32,7 @@ export const HistoryPrice = async ({
   const dataCoin = await historyCoin(currency, days);
 
   return (
-    <section className=" w-9/12 h-10/12">
+    <section className=" w-full h-10/12">
       {typeof dataCoin !== "string" && (
         <GraficLine
           key={crypto.randomUUID()}

@@ -3,10 +3,10 @@ import { MainSection } from "@/app/localComponent/MainSection";
 export default function Home() {
   return (
     <>
-      <div className="snap-center ">
+      <div className="md:snap-center ">
         <MainSection />
       </div>
-      <div className="snap-center ">
+      <div className="md:snap-center ">
         <CardSection />
       </div>
     </>
