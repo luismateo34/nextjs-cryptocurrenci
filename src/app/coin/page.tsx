@@ -11,7 +11,8 @@ export default async function Page({
 }) {
   const name = searchParams?.name || "";
   return (
-    <main className="w-screen h-[calc(100vh-3rem)]  flex flex-col  items-center">
+    <>
+    <main className="w-screen h-[calc(100vh-3rem)]  flex flex-col  items-center ">
       <h1 className="inline-block my-8">crypto coint</h1>
       <SearchInput placeholder="coin name" />
       <table className="w-11/12 h-4/5 mx-auto">
@@ -28,7 +29,8 @@ export default async function Page({
           </Suspense>
         </tbody>
       </table>
-      <LoaderComponent />
     </main>
+      <LoaderComponent />
+    </>
   );
 }

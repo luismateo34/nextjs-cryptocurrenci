@@ -47,9 +47,5 @@ export const GraficLine = ({
 }) => {
   if (labels === null || data === null || label === undefined) return null;
   const date = dataOption(labels, data, label);
-  return (
-    <div>
-      <Line data={date} />
-    </div>
-  );
+  return <Line data={date} className="w-full h-full" />;
 };

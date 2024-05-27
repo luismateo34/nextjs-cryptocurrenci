@@ -30,7 +30,6 @@ export const NavBar = ({
       >
         <ul className="w-full h-full flex flex-row gap-2 justify-around items-end">
           {Object.entries(routerObj).map(([key, value]) => {
-            if (router !== value)
               return (
                 <li
                   key={key}
@@ -43,13 +42,14 @@ export const NavBar = ({
                         {
                           " hover:bg-gradient-to-r from-sky-600 to-emerald-500/90  active:bg-amber-200 ":
                             primary === true,
-                          " hover:bg-gradient-to-r from-amber-300 to-pink-300/85  active:border-orange-400":
+                          " hover:bg-gradient-to-r from-white/40 to-black/15  active:border-orange-400":
                             primary === false,
                           "w-16 h-full": size === "small",
                           "w-24 h-full": size === "medium",
                           "w-28 h-full": size === "big",
                         },
                         "flex flex-row justify-center items-center rounded-md ",
+			`${value === router ? "bg-gradient-to-r from-yellow-400 to-violet-400 border-white text-red-700" : " text-amber-300 " }`,
                         className
                       )
                     )}
@@ -59,36 +59,7 @@ export const NavBar = ({
                 </li>
               );
           })}
-          {Object.entries(routerObj).map(([key, value]) => {
-            if (router !== value) return;
-            return (
-              <li
-                key={key}
-                className="h-full flex flex-row justify-center items-center text-sm md:text-lg text-red-500 bg-amber-300"
-              >
-                <div
-                  className={twMerge(
-                    clsx(
-                      {
-                        " hover:bg-gradient-to-r from-sky-600 to-emerald-500/90  active:bg-amber-200 ":
-                          primary === true,
-                        " hover:bg-gradient-to-r from-amber-300 to-pink-300/85  active:border-orange-400":
-                          primary === false,
-                        "w-16 h-full": size === "small",
-                        "w-24 h-full": size === "medium",
-                        "w-28 h-full": size === "big",
-                      },
-                      "flex flex-row justify-center items-center rounded-md ",
-                      className
-                    )
-                  )}
-                >
-                  {key}
-                </div>
-              </li>
-            );
-          })}
-        </ul>
+                  </ul>
       </nav>
     </div>
   );

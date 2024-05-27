@@ -3,21 +3,23 @@ import { Card, CardHeader, CardContent } from "@/components/ui/card";
 export const GraficCircule = ({
   porcentaje,
   title,
+  className,
 }: {
   porcentaje: number;
   title?: string;
+  className?: string;
 }) => {
   const value = porcentaje >= 0 ? porcentaje : porcentaje * -1;
   return (
-    <Card className="w-52 h-72 flex flex-col justify-around items-center gap-2 bg-blue-900 text-orange-500 ">
+    <Card className={`w-52 h-72 flex flex-col justify-around items-center gap-2 bg-blue-900 text-orange-500 ${className}`}>
       <CardHeader className="w-full flex flex-col justify-center items-center mb-3">
-        <div className="flex flex-col justify-center items-center w-full h-6">
+        <div className="flex flex-col justify-center w-full h-6">
           {title !== undefined && (
-            <>
-              <h2>{title}</h2>
-            </>
+            <div className="flex flex-row justify-center items-center">
+              <h2 >{title}</h2>
+            </div>
           )}
-          <h2>change % 24hs</h2>
+          <h2 className="mx-auto">change % 24hs</h2>
         </div>
       </CardHeader>
       <CardContent className="grid grid-cols-1 justify-items-center content-center w-44 h-44  mb-6">

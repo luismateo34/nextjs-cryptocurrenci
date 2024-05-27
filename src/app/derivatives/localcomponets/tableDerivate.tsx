@@ -7,7 +7,7 @@ import { TableSkeleton } from "@/app/derivatives/localcomponets/tableSkeleton";
 export const TableDerivate = async ({className}:{className?:string}) => {
   const derivDate = await fetchDerivate(1);
   return (
-    <table className={`flex flex-col justify-around gap-2  w-full h-full ${className}`}>
+    <table className={`flex flex-col justify-around gap-2 md:mx-auto w-full md:w-[80%] h-full ${className}`}>
       <thead className="w-full h-12">
         <tr className=" grid grid-cols-2 ">
           <th className="col-start-1 col-end-2">name</th>

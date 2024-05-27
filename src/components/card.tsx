@@ -19,19 +19,19 @@ export const CardImage = ({
 }: CardType) => {
   return (
     <Card
-      className={`relarive flex flex-col items-center justify-evenly w-[70%] h-[90%] md:w-[80%] md:h-[70%] bg-black/30  hover:bg-blue-800 hover:scale-y-105 hover:scale-x-105 rounded-md backdrop-blur-md ${className}`}
+      className={`relarive flex flex-col items-center justify-evenly w-[80%] h-full md:w-[80%] md:h-[70%] bg-black/30 hover:bg-violet-900/10 hover:scale-y-105 hover:scale-x-105 rounded-md backdrop-blur-md ${className}`}
     >
-      <CardContent className=" flex flex-col justify-between items-center w-full h-full md:gap-1 pt-1 ">
+      <CardContent className=" flex flex-col justify-center md:justify-between items-center w-full h-full md:gap-1 pt-1 ">
         <div className="md:w-[80%]  md:h-[60%] w-full h-full rounded-md overflow-hidden ">
           <img
             src={image}
             alt={alt}
-            className="object-cover w-full h-full hover:brightness-150 rounded-md "
+            className="object-cover w-full h-full rounded-md "
           />
         </div>
-        <div className="absolute z-10 inset-0 md:relative w-8/12 h-5 bg-black/70 backdrop-blur-md w  mt-1">
+        <div className="absolute z-10 inset-0 md:relative w-full h-full md:w-8/1 md:h-5 flex flex-col justify-center items-center mt-1 ">
           <Link
-            className=" font-semibold text-lg text-center  tracking-wider text-red-600  "
+            className=" font-semibold text-lg text-center  tracking-wider text-red-600 flex flex-row justify-center items-center  w-14 h-6 "
             href={`/other/${route}`}
           >
             {route}

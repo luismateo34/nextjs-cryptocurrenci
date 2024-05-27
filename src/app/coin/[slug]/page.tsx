@@ -1,9 +1,7 @@
-import { GraficCircule } from "@/components/graficCircule";
-import { HistoryPrice } from "@/app/coin/[slug]/localcomponent/dashboardComponent/historyPrice";
-import { SelectCurrency } from "@/app/coin/[slug]/localcomponent/dashboardComponent/selectCurrency";
-import { SelectDay } from "@/app/coin/[slug]/localcomponent/dashboardComponent/selectDay";
 import { dataCoin } from "@/app/coin/[slug]/localcomponent/functionFetch/dataCoin";
 import { currency } from "@/types/coin.types";
+import { CardTwo } from "@/app/coin/[slug]/localcomponent/dashboardComponent/cardTwo";
+import { CardGrafic } from "@/app/coin/[slug]/localcomponent/dashboardComponent/cardGrafic";
 
 export default async function Page({
   params,
@@ -20,71 +18,37 @@ export default async function Page({
     searchParams?.days === undefined ? "30" : (searchParams?.days as string);
   const data = await dataCoin(searchParams?.currency, searchParams?.ids);
   return (
-    <main className="w-full h-full flex flex-col justify-around items-center">
-      <h1 className="mt-1">{params.slug}</h1>
+    <main className="w-screen h-[calc(100vh-3rem)] flex flex-col justify-around items-center pt-14  md:pt-0">
+      <h1 className="my-4  ">{params.slug}</h1>
       {typeof data !== "string" &&
         data.map((el) => {
           return (
             <section
               key={el.id}
-              className="grid grid-cols-3 grid-rows-2 gap-2 w-full h-5/6"
+              className="mt-0 md:mt-3 flex flex-col justify-between items-stretch md:grid md:grid-cols-3 md:grid-rows-2 gap-2 w-full md:h-5/6"
             >
-              <div className="col-start-3 col-end-4 row-start-1 row-end-3 flex flex-col justify-between items-stretch gap-2 ">
-                <div>
-                  <div className="flex flex-row justify-between items-center rounded-lg bg-slate-200/90 backdrop-blur-sm my-3">
-                    <figure>
-                      <img
-                        src={el.image}
-                        alt={`${el.name} image`}
-                        className="h-11 w-11"
-                      />
-                    </figure>
-                    <div className="text-blue-950 mx-auto font-semibold text-lg">
-                      {el.symbol}
-                    </div>
-                  </div>
-                  {/* price*/}
-                  <div className="mr-auto my-3 px-2 h-5 w-full rounded-md bg-sky-900/35">
-                    currenprice: {el.current_price}
-                  </div>
-                  {/* muestra targeta con mas datos  */}
-                  <div className="w-full flex flex-row justify-between gap-1 relative ">
-                    <div className=" w-full flex flex-row justify-between gap-1 z-10 absolute  ">
-                      <details className="z-10">
-                        <summary>More data</summary>
-                        <section className=" w-full flex flex-col justify-around items-center bg-gray-300/80 rounded-md">
-                          <div> high_24: {el.high_24h}</div>
-                          <div> low_24: {el.low_24h}</div>
-                          <div> ranking : {el.market_cap_rank}</div>
-                          <div>
-                            market_cap_change_24h:
-                            {el.market_cap_change_percentage_24h}
-                          </div>
-                          <div>
-                            "market_cap_change_percentage_24h:
-                            {el.market_cap_change_percentage_24h}
-                          </div>
-                        </section>
-                      </details>
-                    </div>
-                  </div>
-		  {/*grafico circular*/}
-                  <div className="flex flex-col justify-center items-center mt-2 p-1">
-                    <GraficCircule
-                      porcentaje={el.price_change_percentage_24h}
-                      key={el.id}
-                      className="mt-3"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="col-start-1 col-end-3 row-start-1 row-end-3 h-full w-full ">
-                <div className="flex flex-row justify-around items-center">
-                  <SelectDay />
-                  <SelectCurrency />
-                </div>
-                <HistoryPrice key={el.id} currency={currencyOpt} days={days} />
-              </div>
+              <CardTwo
+                current_price={el.current_price}
+                high_24h={el.high_24h}
+                id={el.id}
+                image={el.image}
+                low_24h={el.low_24h}
+                market_cap_change_percentage_24h={
+                  el.market_cap_change_percentage_24h
+                }
+                market_cap_rank={el.market_cap_rank}
+                name={el.name}
+                price_change_percentage_24h={el.ath_change_percentage}
+                symbol={el.symbol}
+                key={el.id}
+                className="md:col-start-3 md:col-end-4 md:row-start-1 md:row-end-3"
+              />
+              <CardGrafic
+                currencyOpt={currencyOpt}
+                days={days}
+                key={el.id}
+                className="md:col-start-1 md:col-end-3 md:row-start-1 md:row-end-3 md:h-full h-[50vh] w-full`"
+              />
             </section>
           );
         })}
