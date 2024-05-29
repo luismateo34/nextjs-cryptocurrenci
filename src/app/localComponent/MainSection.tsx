@@ -13,7 +13,7 @@ export const MainSection = () => {
             cryptocurrenci, nft
             <br /> and more
           </h2>
-          <p className=" text-base md:text-xl text-amber-400 ">
+          <p className=" text-base lg:text-xl text-amber-400 flex flex-col  ">
             Elit convallis tempor pellentesque cras dignissim tempor vestibulum
             nulla, odio nunc lacus id odio convallis nunc sed cras ornare, in.
           </p>

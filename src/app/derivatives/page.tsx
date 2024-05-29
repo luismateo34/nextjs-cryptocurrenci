@@ -1,5 +1,7 @@
 import { TableDerivate } from "@/app/derivatives/localcomponets/tableDerivate";
 import { DashBoard } from "@/app/derivatives/localcomponets/clientComponent/dashboard";
+import { VoidDashboad } from "@/app/derivatives/localcomponets/clientComponent/voidDashboad";
+
 
 export default async function Home() {
   return (
@@ -11,6 +13,7 @@ export default async function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 w-full md:h-4/5">
           <TableDerivate className="col-start-1 col-end-2" />
             <DashBoard />
+      	    <VoidDashboad/>
         </div>
       </main>
     </>

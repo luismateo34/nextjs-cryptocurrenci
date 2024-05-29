@@ -13,13 +13,13 @@ export const Scroll = () => {
             market={el.market}
             price={el.price}
             price_percentage_change_24h={el.price_percentage_change_24h}
-           symbol={el.symbol}
+            symbol={el.symbol}
             volume_24h={el.volume_24h}
             spread={el.spread}
             key={el.symbol}
           />
         ))}
-      <div className="h-9" ref={ref}>
+      <div className="h-9 mb-5" ref={ref}>
       {load && <span>loading</span>}
       </div>
     </>

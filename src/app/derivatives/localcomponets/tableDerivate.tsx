@@ -1,8 +1,9 @@
 import { fetchDerivate } from "@/app/derivatives/localcomponets/fechDerivate";
-import { Scroll } from "@/app/derivatives/localcomponets/clientComponent/scrollInfinity/scroll";
 import { RowTable } from "@/app/derivatives/localcomponets/tableRow";
 import { Suspense } from "react";
-import { TableSkeleton } from "@/app/derivatives/localcomponets/tableSkeleton";
+import dynamic from 'next/dynamic'
+const Skeleton = dynamic(() => import('./tableSkeleton'), { ssr: false })
+const RowScroll = dynamic(()=>import("./clientComponent/scrollInfinity/scroll").then((mod)=> mod.Scroll),{ssr:false})
 
 export const TableDerivate = async ({className}:{className?:string}) => {
   const derivDate = await fetchDerivate(1);
@@ -15,12 +16,12 @@ export const TableDerivate = async ({className}:{className?:string}) => {
         </tr>
       </thead>
       <tbody className="w-full h-max flex flex-col justify-around gap-2 ">
-        <Suspense fallback={<TableSkeleton />}>
+        <Suspense fallback={<Skeleton />}>
           {typeof derivDate !== "string" &&
             derivDate.map((el) => {
               return (
                 <RowTable
-                  key={crypto.randomUUID()}
+                  key={el.symbol}
                   contract_type={el.contract_type}
                   spread={el.spread}
                   price={el.price}
@@ -32,7 +33,7 @@ export const TableDerivate = async ({className}:{className?:string}) => {
               );
             })}
         </Suspense>
-        <Scroll />
+        <RowScroll/>
       </tbody>
     </table>
   );

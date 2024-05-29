@@ -24,7 +24,7 @@ export const NavBar = ({
   const router = usePathname();
 
   return (
-    <div className="w-screen block sticky top-0 z-10 backdrop-blur-md shadow-md bg-whibg-blue-900/20 shadow-yellow-300/60 ">
+    <div className="w-full block sticky top-0 z-10 backdrop-blur-md shadow-md bg-whibg-blue-900/20 shadow-yellow-300/60 ">
       <nav
         className={`w-full h-12  block border-solid border-b-2 border-b-yellow-400 bg-black/20 `}
       >

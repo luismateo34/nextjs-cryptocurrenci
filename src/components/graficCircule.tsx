@@ -16,10 +16,10 @@ export const GraficCircule = ({
         <div className="flex flex-col justify-center w-full h-6">
           {title !== undefined && (
             <div className="flex flex-row justify-center items-center">
-              <h2 >{title}</h2>
+              <h3 >{title}</h3>
             </div>
           )}
-          <h2 className="mx-auto">change % 24hs</h2>
+          <h3 className="mx-auto">change % 24hs</h3>
         </div>
       </CardHeader>
       <CardContent className="grid grid-cols-1 justify-items-center content-center w-44 h-44  mb-6">

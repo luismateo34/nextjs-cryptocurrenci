@@ -9,7 +9,7 @@ const RowSkeleton = () => {
   );
 };
 
-export const TableSkeleton = () => {
+export default function TableSkeleton () {
   return (
     <section className="w-full h-4/6 flex flex-col justify-around gap-2 overflow-x-hidden  scroll-smooth ">
       <RowSkeleton />

@@ -18,14 +18,14 @@ export default async function Page({
     searchParams?.days === undefined ? "30" : (searchParams?.days as string);
   const data = await dataCoin(searchParams?.currency, searchParams?.ids);
   return (
-    <main className="w-screen h-[calc(100vh-3rem)] flex flex-col justify-around items-center pt-14  md:pt-0">
+    <main className="w-screen h-[calc(100vh-3rem)] flex flex-col justify-around items-center pt-14  lg:pt-0">
       <h1 className="my-4  ">{params.slug}</h1>
       {typeof data !== "string" &&
         data.map((el) => {
           return (
             <section
               key={el.id}
-              className="mt-0 md:mt-3 flex flex-col justify-between items-stretch md:grid md:grid-cols-3 md:grid-rows-2 gap-2 w-full md:h-5/6"
+              className="mt-12 lg:mt-3 flex flex-col justify-between items-stretch lg:grid lg:grid-cols-3 lg:grid-rows-2 gap-2 w-full lg:h-5/6"
             >
               <CardTwo
                 current_price={el.current_price}
@@ -41,13 +41,13 @@ export default async function Page({
                 price_change_percentage_24h={el.ath_change_percentage}
                 symbol={el.symbol}
                 key={el.id}
-                className="md:col-start-3 md:col-end-4 md:row-start-1 md:row-end-3"
+                className="lg:col-start-3 lg:col-end-4 lg:row-start-1 lg:row-end-3 w-11/12 px-2 mx-auto"
               />
               <CardGrafic
                 currencyOpt={currencyOpt}
                 days={days}
                 key={el.id}
-                className="md:col-start-1 md:col-end-3 md:row-start-1 md:row-end-3 md:h-full h-[50vh] w-full`"
+                className="lg:col-start-1 lg:col-end-3 lg:row-start-1 lg:row-end-3 lg:h-full h-[50vh] w-full`"
               />
             </section>
           );

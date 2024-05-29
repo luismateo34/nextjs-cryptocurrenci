@@ -35,7 +35,6 @@ export const HistoryPrice = async ({
     <section className=" w-full h-10/12">
       {typeof dataCoin !== "string" && (
         <GraficLine
-          key={crypto.randomUUID()}
           data={dataCoin.prices.map((el) => el[1].toString())}
           label="History of Price"
           labels={dataCoin.prices.map((el) => {

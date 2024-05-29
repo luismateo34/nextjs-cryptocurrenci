@@ -9,6 +9,7 @@ export const useScroll = () => {
   const [load, setLoad] = useState<boolean>(false);
   const { ref, inView } = useInView({
     threshold: 0,
+    rootMargin: "0px",
   });
   useEffect(() => {
     if (inView) {
@@ -29,6 +30,6 @@ export const useScroll = () => {
           setLoad(false);
         });
     }
-  }, [inView]);
+  }, [inView, page]);
   return { der, load, ref };
 };

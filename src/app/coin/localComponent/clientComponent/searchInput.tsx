@@ -20,6 +20,7 @@ export const SearchInput = ({ placeholder }: { placeholder: string }) => {
         placeholder={placeholder}
         defaultValue={searchParams.get("name")?.toString()}
         className="w-4/12 h-8 my-3"
+        suppressHydrationWarning={true}
       />
   );
 };

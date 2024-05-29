@@ -21,11 +21,11 @@ export const DashBoard = () => {
     <div
       className={` ${
         showData ? "fixed" : "hidden"
-      } top-0  md:top-1/4 md:right-5  z-20 grid  grid-cols-1 md:grid-cols-2 w-full md:w-1/2 h-full md:h-2/3 justify-items-center place-items-center md:bg-purple-800/20 bg-black/25 backdrop-blur-sm  rounded-lg`}
+      } top-0  md:top-1/4 md:right-5  z-20 grid  grid-cols-1 md:grid-cols-2 w-full md:w-1/2 h-full md:h-2/3 justify-items-center place-items-center md:bg-blue-900 bg-black/25 backdrop-blur-sm  rounded-lg`}
     >
       <div className="w-full h-full flex flex-col  md:pb-2 justify-around items-center gap-2 col-start-1 col-end-2">
         <button
-          className="w-3/5 h-8 rounded-sm my-auto md:m-0 mx-auto text-white bg-gradient-to-r from-violet-600 to-pink-600 hover:bg-amber-400"
+          className="w-3/5 h-8 rounded-sm my-auto md:m-0 mx-auto text-white bg-pink-800/90 hover:bg-amber-400"
           onClick={() => {
             noShow();
 	    noselect()
@@ -35,11 +35,11 @@ export const DashBoard = () => {
         </button>
 
         <GraficCircule
-          key={crypto.randomUUID()}
+          key={symbol}
           porcentaje={price_percentage_change_24h}
         />
       </div>
-      <div className="w-full h-full flex flex-col text-grtext-yellow-500  justify-around items-center gap-2 col-start-1 col-end-2 md:col-start-2 md:col-end-3">
+      <div className="w-full h-full flex flex-col text-yellow-500  px-2 justify-around items-center gap-2 col-start-1 col-end-2 md:col-start-2 md:col-end-3">
         <span className="w-3/4 md:w-full inline-flex bg-white/40 backdrop-blur-md rounded-md px-2 justify-center h-6">
           {symbol}
         </span>

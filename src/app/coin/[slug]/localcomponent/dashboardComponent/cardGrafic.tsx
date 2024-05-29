@@ -10,7 +10,7 @@ export const CardGrafic = ({currencyOpt, days, className}:{ currencyOpt:currency
         <SelectDay />
         <SelectCurrency />
       </div>
-      <HistoryPrice key={crypto.randomUUID()} currency={currencyOpt} days={days} />
+      <HistoryPrice  currency={currencyOpt} days={days} />
     </div>
   );
 };

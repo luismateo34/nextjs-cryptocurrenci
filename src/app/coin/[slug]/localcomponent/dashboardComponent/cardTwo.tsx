@@ -49,7 +49,7 @@ export const CardTwo: FC<cardParam> = ({
         {/* muestra targeta con mas datos  */}
         <div className="w-full flex flex-row justify-between gap-1 rtive ">
           <div className=" w-full flex flex-row justify-between gap-1 z-10 absolute  ">
-            <details className="z-10 w-full">
+            <details className="z-10 w-10/12">
               <summary>More data</summary>
               <section className=" w-full flex flex-col justify-around items-center text-amber-300  bg-black/65 backdrop-blur-sm rounded-md">
                 <div> high_24: {high_24h}</div>
