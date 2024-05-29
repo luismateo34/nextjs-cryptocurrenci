@@ -24,16 +24,16 @@ export const NavBar = ({
   const router = usePathname();
 
   return (
-    <div className="w-full block sticky top-0 z-10 backdrop-blur-md shadow-md bg-whibg-blue-900/20 shadow-yellow-300/60 ">
+    <div className="w-screen flex flex-row sticky top-0 z-20 backdrop-blur-md shadow-md bg-whibg-blue-900/20 shadow-yellow-300/60 ">
       <nav
-        className={`w-full h-12  block border-solid border-b-2 border-b-yellow-400 bg-black/20 `}
+        className={`w-screen h-12  flex flex-row border-solid border-b-2 border-b-yellow-400 bg-black/20 `}
       >
-        <ul className="w-full h-full flex flex-row gap-2 justify-around items-end">
+        <ul className="w-screen h-full flex flex-row gap-1 px-1 justify-around">
           {Object.entries(routerObj).map(([key, value]) => {
               return (
                 <li
                   key={key}
-                  className="h-full flex flex-row justify-center items-center text-sm md:text-lg text-red-500"
+                  className="h-full w-1/5 flex flex-row justify-center items-center text-sm md:text-lg text-red-500"
                 >
                   <Link
                     href={value}

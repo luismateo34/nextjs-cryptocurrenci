@@ -20,6 +20,7 @@ export const Scroll = () => {
           />
         ))}
       <div className="h-9 mb-5" ref={ref}>
+        <span>inview</span>
       {load && <span>loading</span>}
       </div>
     </>
