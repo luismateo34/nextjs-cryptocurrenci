@@ -3,47 +3,55 @@ import "./other.css";
 export default function Other() {
   return (
     <>
-      <article>
-        <h1>Cryptocurrencies: A Look at the Digital Currency of the Future</h1>
-        <p>
+      <article className="other">
+        <h1 className="other">
+          Cryptocurrencies: A Look at the Digital Currency of the Future
+        </h1>
+        <p className="other">
           Cryptocurrencies have burst onto the financial scene in recent years,
           generating great interest and controversy in equal measure. It is a
           type of digital currency that uses cryptography to secure transactions
           and control the creation of additional units. Unlike traditional
           currencies, cryptocurrencies are not subject to any central government
           or financial institution, but operate on a decentralized network
-          called a <a href="#blockchain">blockchain</a>
+          called a{" "}
+          <a className="other" href="#blockchain">
+            blockchain
+          </a>
         </p>
-        <h2>Characteristics</h2>
+        <h2 className="other">Characteristics</h2>
 
-        <p>
+        <p className="other">
           Cryptocurrencies have a number of characteristics that differentiate
           them from traditional currencies:
         </p>
-
-        <div className="container">
-          <ul>
-            <li>
+        <div className="flex flex-row w-full h-max justify-start items-center mb-[5vh] md:mb-1 ">
+          <ul className="other ">
+            <li className="other">
               Decentralization: They are not subject to any central government
               or financial institution
             </li>
-            <li>Security: Transactions are secured by cryptography</li>
-            <li>
+            <li className="other">
+              Security: Transactions are secured by cryptography
+            </li>
+            <li className="other">
               Transparency: All transactions are public and visible to all
               participants in the network
             </li>
-            <li>
+            <li className="other">
               Immutability: Once a transaction is recorded, it cannot be
               reversed
             </li>
-            <li>
+            <li className="other">
               Pseudonymity: Transactions are associated with wallet addresses,
               not with real identities
             </li>
           </ul>
         </div>
-        <h2>How do cryptocurrencies work?</h2>
-        <p id="blockchain">
+        <h2 className="other inline-block mt-4">
+          How do cryptocurrencies work?
+        </h2>
+        <p className="other " id="blockchain">
           Blockchain technology is the foundation of how cryptocurrencies work.
           This technology is based on a public and distributed ledger of all
           transactions that are made with a certain cryptocurrency. This

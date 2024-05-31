@@ -17,8 +17,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-blue-950 text-white `}>
-        <div className="relative snap-y md:snap-mandatory  w-full h-screen overflow-y-auto overflow-x-hidden  scroll-smooth ">
+      <body className={`${inter.className} bg-blue-950 text-white w-screen `}>
+        <div className="relative snap-y md:snap-mandatory  w-screen h-screen overflow-y-auto overflow-x-hidden  scroll-smooth ">
           <NavBar primary={false} size="medium" />
           {children}
         </div>

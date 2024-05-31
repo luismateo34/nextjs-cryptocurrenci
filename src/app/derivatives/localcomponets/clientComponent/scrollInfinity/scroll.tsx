@@ -1,9 +1,13 @@
 "use client";
-import { useScroll } from "./useScroll";
+// import { useScroll } from "./useScroll";
 import { RowTable } from "@/app/derivatives/localcomponets/tableRow";
+import {useIntersection} from "./useIntersection"
+import {v4} from "uuid"
 
-export const Scroll = () => {
-  const { der, load, ref } = useScroll();
+export default function Scroll() {
+  // const { der, load, ref } = useScroll();
+
+  const {der,load,observerTarget} = useIntersection()
   return (
     <>
       {der.length === 0 ||
@@ -16,13 +20,12 @@ export const Scroll = () => {
             symbol={el.symbol}
             volume_24h={el.volume_24h}
             spread={el.spread}
-            key={el.symbol}
+            key={v4()}
           />
         ))}
-      <div className="h-9 mb-5" ref={ref}>
-        <span>inview</span>
-      {load && <span>loading</span>}
-      </div>
+        {load && <tr>loading</tr>}
+      <tr className="h-2 mt-2 " ref={observerTarget}>
+      </tr>
     </>
   );
-};
+}
