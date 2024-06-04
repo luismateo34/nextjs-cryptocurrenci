@@ -48,8 +48,8 @@ export const NavBar = ({
                           "w-24 h-full": size === "medium",
                           "w-28 h-full": size === "big",
                         },
-                        "flex flex-row justify-center items-center rounded-md ",
-			`${value === router ? "bg-gradient-to-r from-yellow-400 to-violet-400 border-white text-red-700" : " text-amber-300 " }`,
+                        "flex flex-row justify-center items-center rounded-md font-medium ",
+			`${value === router ? " bg-gradient-to-r from-amber-400 from-10% via-amber-300 via-30% to-yellow-300 to-90% text-red-700" : " text-amber-300 " }`,
                         className
                       )
                     )}

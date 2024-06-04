@@ -1,11 +1,9 @@
 "use client";
-// import { useScroll } from "./useScroll";
 import { RowTable } from "@/app/derivatives/localcomponets/tableRow";
 import {useIntersection} from "./useIntersection"
 import {v4} from "uuid"
 
 export default function Scroll() {
-  // const { der, load, ref } = useScroll();
 
   const {der,load,observerTarget} = useIntersection()
   return (
@@ -24,7 +22,7 @@ export default function Scroll() {
           />
         ))}
         {load && <tr>loading</tr>}
-      <tr className="h-2 mt-2 " ref={observerTarget}>
+      <tr className="h-2 mt-4 " ref={observerTarget}>
       </tr>
     </>
   );

@@ -1,4 +1,3 @@
-"use server"
 import { fetchDerivate } from "@/app/derivatives/localcomponets/fechDerivate";
 import { RowTable } from "@/app/derivatives/localcomponets/tableRow";
 import { Suspense } from "react";

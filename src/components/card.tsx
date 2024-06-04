@@ -1,6 +1,5 @@
 import { type ReactNode } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import Link from "next/link";
 
 interface CardType {
   children: JSX.Element | ReactNode;
@@ -8,6 +7,7 @@ interface CardType {
   alt: string;
   className?: string;
   route: string;
+  nameRoute:string;
 }
 
 export const CardImage = ({
@@ -16,6 +16,7 @@ export const CardImage = ({
   alt,
   className,
   route,
+  nameRoute
 }: CardType) => {
   return (
     <Card
@@ -29,13 +30,14 @@ export const CardImage = ({
             className="object-cover w-full h-full rounded-md "
           />
         </div>
-        <div className="absolute z-10 inset-0 md:relative w-full h-full md:w-8/1 md:h-5 flex flex-col justify-center items-center mt-1 ">
-          <Link
+        <div className="absolute z-10 bg-black/15 md:bg-transparent backdrop-blur-sm md:backdrop-blur-0 inset-0 md:relative w-full h-full md:w-8/1 md:h-5 flex flex-col justify-center items-center mt-1 ">
+          <a
             className=" font-semibold text-lg text-center  tracking-wider text-red-600 flex flex-row justify-center items-center  w-14 h-6 "
-            href={`/other/${route}`}
+            href={`${route}`}
+            target="_blank"
           >
-            {route}
-          </Link>
+            {nameRoute}
+          </a>
         </div>
 
         <article className="p-2 hidden md:flex md:flex-row text-yellow-300  ">
