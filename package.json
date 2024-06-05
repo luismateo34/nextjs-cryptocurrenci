@@ -11,7 +11,7 @@
     "migrate:dev": "prisma migrate dev",
     "prisma:generate": "prisma generate",
     "prisma:studio": " prisma studio",
-    "build": " next build",
+    "build": " pnpx prisma migrate deploy &&  next build",
     "postinstall": "prisma generate",
     "start": "next start",
     "start:host": "next start -H 192.168.0.7",
@@ -21,7 +21,8 @@
     "oxlint": "oxlint . --deny ts,tsx --fix --ignore-path=.eslintrc ",
     "prettier": "prettier . **/*.{ts,tsx} --write",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "seed": "node .seed/derivate.mjs && node .seed/seed.mjs"
   },
   "dependencies": {
     "@prisma/client": "5.12.1",
@@ -78,5 +79,5 @@
     "vite-tsconfig-paths": "4.3.1",
     "vitest": "^1.3.1"
   },
-  "packageManager": "pnpm@9.1.1+sha512.14e915759c11f77eac07faba4d019c193ec8637229e62ec99eefb7cf3c3b75c64447882b7c485142451ee3a6b408059cdfb7b7fa0341b975f12d0f7629c71195"
+   "packageManager": "pnpm@9.1.1+sha512.14e915759c11f77eac07faba4d019c193ec8637229e62ec99eefb7cf3c3b75c64447882b7c485142451ee3a6b408059cdfb7b7fa0341b975f12d0f7629c71195"
 }
