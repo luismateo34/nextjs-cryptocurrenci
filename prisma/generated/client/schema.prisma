@@ -1,0 +1,38 @@
+// This is your Prisma schema file,
+// learn more about it in the docs https//pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate https//pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Listnamecripto {
+  id     String @id
+  symbol String
+  name   String
+}
+
+model DerivateCripto {
+  market                      String
+  symbol                      String
+  index_id                    String @id
+  price                       String
+  price_percentage_change_24h Float
+  contract_type               String
+  index                       Int?
+  basis                       Float
+  spread                      Float?
+  funding_rate                Float
+  open_interest               Float?
+  volume_24h                  Float
+  last_traded_at              Int
+  expired_at                  Int?
+}
