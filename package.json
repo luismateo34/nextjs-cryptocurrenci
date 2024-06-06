@@ -11,7 +11,7 @@
     "migrate:dev": "prisma migrate dev",
     "prisma:generate": "prisma generate",
     "prisma:studio": " prisma studio",
-    "build": " prisma generate &&  next build",
+    "build": " pnpx prisma generate &&  next build",
     "postinstall": "prisma generate",
     "start": "next start",
     "start:host": "next start -H 192.168.0.7",
