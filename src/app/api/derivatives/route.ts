@@ -1,10 +1,11 @@
 import prisma from "@/server/prisma";
-export const dynamic = 'force-dynamic' 
+export const dynamic = 'force-dynamic'
 import { NextResponse, type NextRequest } from "next/server";
 /*
  *Derivatecripto = 1227 valores
  * 246 paginas de 5 elementos
  * 123 paginas de 10 elementos
+ * 62 paginas con painacion de 20
  */
 export async function GET(req: NextRequest) {
   try {
