@@ -1,21 +1,19 @@
-import { TableDerivate } from "@/app/derivatives/localcomponets/tableDerivate";
-import { DashBoard } from "@/app/derivatives/localcomponets/clientComponent/dashboard";
-import { VoidDashboad } from "@/app/derivatives/localcomponets/clientComponent/voidDashboad";
+// import { TableDerivate } from "@/app/derivatives/localcomponets/tableDerivate";
+//import { DashBoard } from "@/app/derivatives/localcomponets/clientComponent/dashboard";
+//import { VoidDashboad } from "@/app/derivatives/localcomponets/clientComponent/voidDashboad";
+//import { List } from "@/app/derivatives/localcomponets/clientComponent/scrollInfinity/List";
+import Skeleton  from "@/app/derivatives/localcomponets/tableSkeleton"
+import {TableDerivate} from "@/app/derivatives/localcomponets/tableDerivate"
 
-
+import { Suspense } from "react";
 export default async function Home() {
   return (
-    <>
-      <main className=" w-screen h-[calc(100vh-3rem)]  relative ">
-        <div className="h-1/5 flex flex-row justify-center items-center">
-          <h1>crypto market</h1>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 w-full md:h-4/5">
-          <TableDerivate className="col-start-1 col-end-2" />
-            <DashBoard />
-      	    <VoidDashboad/>
-        </div>
-      </main>
-    </>
+    <div className="max-w-3xl mx-auto p-5">
+      <h1 className="text-center text-2xl mb-2">Derivatives list</h1>
+      <Suspense fallback={<Skeleton/>}>
+        <TableDerivate/>
+      </Suspense>
+
+    </div>
   );
 }

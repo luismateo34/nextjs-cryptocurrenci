@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import { NavBar } from "@/components/navbar";
 import "./globals.css";
+import {Provider} from "@/components/provider"
 
 const inter = Raleway({ subsets: ["latin"] });
 
@@ -18,10 +19,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-blue-950 text-white w-screen `}>
-        <div className="relative snap-y md:snap-mandatory  w-screen h-screen overflow-y-auto overflow-x-hidden  scroll-smooth ">
-          <NavBar primary={false} size="medium" />
-          {children}
-        </div>
+        <Provider>
+          <div className="relative snap-y   md:snap-mandatory  w-screen h-screen overflow-y-auto overflow-x-hidden  scroll-smooth ">
+            <NavBar primary={false} size="medium" />
+            {children}
+          </div>
+        </Provider>
       </body>
     </html>
   );

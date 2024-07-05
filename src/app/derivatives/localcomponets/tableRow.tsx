@@ -15,14 +15,14 @@ export const RowTable: FC<Date> = ({
 }) => {
   const { value } = Selected((state) => state);
   return (
-    <tr
+    <div
       key={symbol}
       className={`w-full rounded-md h-[10vh] grid grid-cols-2 gap-2 ${
         value === symbol ? "bg-white/20" : ""
       }`}
     >
-      <td className="col-start-1 col-end-2 place-self-center">{symbol}</td>
-      <td className="col-start-2 col-end-3 place-self-center">
+      <div className="col-start-1 col-end-2 place-self-center">{symbol}</div>
+      <div className="col-start-2 col-end-3 place-self-center">
         <ButtonClient
           key={symbol}
           price={price}
@@ -36,7 +36,7 @@ export const RowTable: FC<Date> = ({
         >
           view date
         </ButtonClient>
-      </td>
-    </tr>
+      </div>
+    </div>
   );
 };
