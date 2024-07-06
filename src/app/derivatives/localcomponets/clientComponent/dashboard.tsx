@@ -30,10 +30,10 @@ export const DashBoard = () => {
     <section
       className={`${
         showData ? "fixed" : "hidden"
-      }  inset-0 w-full h-full  z-10 backdrop-blur-sm bg-black/10 flex flex-col justify-center items-center`}
+      }  inset-0 w-full h-full  z-10 backdrop-blur-sm bg-black/10 flex flex-col justify-center items-center gap-2`}
     >
       <div
-        className={` fixed  z-20 grid  grid-cols-1 w-full md:w-1/2  h-full md:h-2/3 justify-items-center place-items-center  bg-black/25 backdrop-blur-sm  rounded-lg`}
+        className={` fixed  z-20 grid  grid-cols-1 w-full md:w-2/3  lg:w-1/2  h-full md:h-2/3 justify-items-center place-items-center  bg-black/25 backdrop-blur-sm  rounded-lg`}
       >
         {/* tarjeta con grafico circular*/}
         <div className="w-full h-full flex flex-col  md:pb-2 justify-around items-center gap-2 col-start-1 col-end-2">
@@ -56,24 +56,25 @@ export const DashBoard = () => {
           />
         </div>
         {/* lista de atributos  */}
-        <div className="w-full h-full flex flex-col flex-wrap  text-yellow-500  px-2 justify-around items-center gap-2 col-start-1 col-end-2 md:col-start-2 md:col-end-3">
-          <span className="w-3/4 md:w-full inline-flex bg-white/40 backdrop-blur-md rounded-md px-2 justify-center h-6">
+        <div className="w-full h-full flex flex-col flex-wrap text-sm  lg:text-base  text-yellow-500  mt-3 md:mt-0 px-2 justify-around items-center gap-2 col-start-1 col-end-2 md:col-start-2 md:col-end-3">
+          <span className="w-10/12 md:w-full inline-flex bg-white/40 backdrop-blur-md rounded-md px-2 items-center justify-center h-9 md:h-7">
             {symbol}
           </span>
 
-          <span className="w-3/4 md:w-full inline-flex bg-white/40 backdrop-blur-md rounded-md px-2 justify-center h-6">
+          <span className="w-10/12 md:w-full inline-flex bg-white/40 backdrop-blur-md rounded-md px-2 items-center justify-center h-9 md:h-7">
             price:{price}
           </span>
-          <span className="w-3/4 md:w-full inline-flex bg-white/40 backdrop-blur-md rounded-md px-2 justify-center h-6">
+          <span className="w-10/12 md:w-full inline-flex bg-white/40 backdrop-blur-md rounded-md px-2 items-center justify-center h-9 md:h-7">
             contract_type:{contract_type}
           </span>
-          <span className="w-3/4 md:w-full inline-flex bg-white/40 backdrop-blur-md rounded-md px-2 justify-center h-6">
+          <span className="w-10/12 md:w-full inline-flex bg-white/40 backdrop-blur-md rounded-md px-2 items-center justify-center h-9 md:h-7">
             market: {market}
           </span>
-          <span className="w-3/4 md:w-full inline-flex bg-white/40 backdrop-blur-md rounded-md px-2 justify-center h-6">
+          <span className="w-10/12 md:w-full inline-flex bg-white/40 backdrop-blur-md rounded-md px-2 items-center justify-center h-9 md:h-7">
+
             volume_24h: {volume_24h}
           </span>
-          <span className="w-3/4 md:w-full inline-flex bg-white/40 backdrop-blur-md rounded-md px-2 justify-center h-6">
+          <span className="w-10/12 md:w-full inline-flex bg-white/40 backdrop-blur-md rounded-md px-2 items-center justify-center h-9 md:h-7">
             spread:{spread}
           </span>
         </div>

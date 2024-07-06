@@ -24,6 +24,9 @@ export default function TableSkeleton () {
       <RowSkeleton />
       <RowSkeleton />
       <RowSkeleton />
+      <RowSkeleton />
+      <RowSkeleton />
+      <RowSkeleton />
     </section>
   );
 };

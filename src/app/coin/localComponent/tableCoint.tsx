@@ -9,21 +9,21 @@ export const Coints = async ({ name }: { name: string }) => {
         coint.map((el) => el.id)[0] === "error" ||
         coint.map((el) => {
           return (
-            <tr key={el.id} className="w-full h-7 grid grid-cols-3">
-              <td className="col-start-1 col-end-2 place-self-center overflow-hidden">
+            <div key={el.id} className="w-full h-7 grid grid-cols-3">
+              <div className="col-start-1 col-end-2 place-self-center overflow-hidden">
                 {el.name.length > 12 ? el.name.split(" ").slice(0,2).join(" ") : el.name  }
-              </td>
-              <td className="col-start-2 col-end-3 place-self-center overflow-hidden ">
+              </div>
+              <div className="col-start-2 col-end-3 place-self-center overflow-hidden ">
                 {el.symbol}
-              </td>
-              <td className="cols-start-3 col-end-4">
+              </div>
+              <div className="cols-start-3 col-end-4">
                 <ButtonTable
                   ids={el.id}
 		  name={el.name.length > 12 ? el.name.split(" ").slice(0,2).join(" ") : el.name  }
                   className="w-full  h-8 mr-2 hover:bg-orange-600 active:bg-amber-500 "
                 />
-              </td>
-            </tr>
+              </div>
+            </div>
           );
         })}
       {/* en caso de id error, devuelve un componente  error */}

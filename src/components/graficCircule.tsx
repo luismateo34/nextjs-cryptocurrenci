@@ -11,7 +11,7 @@ export const GraficCircule = ({
 }) => {
   const value = porcentaje >= 0 ? porcentaje : porcentaje * -1;
   return (
-    <Card className={`w-52 h-72 flex flex-col justify-around items-center gap-2 bg-blue-900 text-orange-500 ${className}`}>
+    <Card className={` w-48 lg:w-52 h-72 flex flex-col justify-around items-center gap-2 bg-blue-900 text-orange-500 ${className}`}>
       <CardHeader className="w-full flex flex-col justify-center items-center mb-3">
         <div className="flex flex-col justify-center w-full h-6">
           {title !== undefined && (

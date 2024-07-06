@@ -22,7 +22,7 @@ export const SelectDay = () => {
     <label>
       select day
       <select
-        value={value}
+        value={value !== null ? value : "30" }
         onChange={(e) => {
           handelChange(e.target.value);
         }}

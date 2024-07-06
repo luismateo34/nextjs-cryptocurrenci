@@ -36,7 +36,7 @@ export const SelectCurrency = () => {
     <label>
       select currency
       <select
-        value={value}
+        value={value !== null ? value : "usd"}
         onChange={(e) => {
           handelChange(e.target.value);
         }}
