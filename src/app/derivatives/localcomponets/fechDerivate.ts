@@ -1,6 +1,6 @@
 "use server";
 import {Derivate, Deriv} from "@/types/derivatives.types"
-const derurl = process.env.NEXT_PUBLIC_URL_DERIBATE;
+const derurl = process.env.DOMAIN_URL
 const apiDeribaties = "/api/derivatives";
 
 export const fetchDerivate = async ( pageParam: number ):Promise<Deriv [] > => {

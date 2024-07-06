@@ -1,5 +1,5 @@
 import prisma from "@/server/prisma";
-export const dynamic = 'force-dynamic' 
+export const dynamic = "force-dynamic";
 import { NextResponse, type NextRequest } from "next/server";
 
 export async function GET(req: NextRequest) {
@@ -12,6 +12,7 @@ export async function GET(req: NextRequest) {
       where: {
         name: { equals: `${namecoint}` },
       },
+      cacheStrategy: { swr: 60, ttl: 60 },
     });
 
     return NextResponse.json({ coints });
