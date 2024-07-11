@@ -1,3 +1,4 @@
+"use server"
 import {jsonCoint, Coint} from "@/types/jsonCoin.types"
 
 const url = process.env.DOMAIN_URL;
