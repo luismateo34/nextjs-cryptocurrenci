@@ -18,7 +18,9 @@ function makeQueryClient() {
 }
 
 let browserQueryClient: QueryClient | undefined = undefined;
-
+/*
+ *@return {QueryClient}
+ */
 function getQueryClient() {
   if (isServer) {
     // Server: always make a new query client
@@ -33,11 +35,14 @@ function getQueryClient() {
   }
 }
 
-export const Provider = ({children}:Readonly<{children:React.ReactNode}>) => {
+/*
+ *react query provder with server side rendering enabled
+ */
+export const Provider = ({
+  children,
+}: Readonly<{ children: React.ReactNode }>) => {
   const queryClient = getQueryClient();
   return (
-      <QueryClientProvider client={queryClient}>
-      {children}
-      </QueryClientProvider>
+    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
   );
 };

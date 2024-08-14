@@ -19,7 +19,7 @@ export const MainSection = () => {
           </p>
         </div>
         <div className="col-start-2 col-end-3">
-          <img src={criptologo.src} alt="logo de criptomoneda"  />
+          <img src={criptologo.src} alt="logo de criptomoneda" />
         </div>
       </div>
     </Section>

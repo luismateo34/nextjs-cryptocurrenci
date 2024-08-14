@@ -15,7 +15,7 @@ export const fetchDerivate = async (pageParam: number): Promise<Deriv[]> => {
   }
 };
 
-export const useList = (  initial: Deriv[] ) => {
+export const useList = (initial: Deriv[]) => {
   const { data, error, fetchNextPage, isFetchingNextPage, status } =
     useInfiniteQuery({
       queryKey: ["projects"],
@@ -62,5 +62,5 @@ export const useList = (  initial: Deriv[] ) => {
       }
     };
   }, [inview]);
- return {status, error, datamemo, data, isFetchingNextPage, observerTarget   }
+  return { status, error, datamemo, data, isFetchingNextPage, observerTarget };
 };

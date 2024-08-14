@@ -7,7 +7,7 @@ interface CardType {
   alt: string;
   className?: string;
   route: string;
-  nameRoute:string;
+  nameRoute: string;
 }
 
 export const CardImage = ({
@@ -16,7 +16,7 @@ export const CardImage = ({
   alt,
   className,
   route,
-  nameRoute
+  nameRoute,
 }: CardType) => {
   return (
     <Card

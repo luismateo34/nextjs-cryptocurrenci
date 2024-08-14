@@ -1,4 +1,8 @@
 import { Skeleton } from "@/components/ui/skeleton";
+/*
+ *skeleton for await component on the server
+ *
+ */
 
 const RowSkeleton = () => {
   return (

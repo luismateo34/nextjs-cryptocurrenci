@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { Store } from "@/app/derivatives/localcomponets/store/store";
-import {Selected} from "@/app/derivatives/localcomponets/store/selected";
+import { Selected } from "@/app/derivatives/localcomponets/store/selected";
 import { active } from "@/app/derivatives/localcomponets/store/active";
 import { type Date } from "@/types/derivatives.types";
 import { FC } from "react";
@@ -25,7 +25,7 @@ export const ButtonClient: FC<ButtonType> = ({
 }) => {
   const buildStore = Store((state) => state.newDate);
   const { show } = active((state) => state);
-  const {select} = Selected( state => state )
+  const { select } = Selected((state) => state);
   return (
     <>
       <Button
@@ -41,7 +41,7 @@ export const ButtonClient: FC<ButtonType> = ({
             symbol,
             volume_24h,
           });
-	  select(symbol)
+          select(symbol);
         }}
       >
         {children}

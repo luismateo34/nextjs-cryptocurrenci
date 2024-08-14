@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import { NavBar } from "@/components/navbar";
 import "./globals.css";
-import {Provider} from "@/components/provider"
+import { Provider } from "@/components/provider";
 
 const inter = Raleway({ subsets: ["latin"] });
 

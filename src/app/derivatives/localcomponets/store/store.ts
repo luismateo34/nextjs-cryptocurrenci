@@ -1,7 +1,7 @@
 import { create } from "zustand";
-import {Date} from "@/types/derivatives.types"
+import { Date } from "@/types/derivatives.types";
 
-interface Action{
+interface Action {
   resetDate: () => void;
   newDate: (state: Date) => void;
 }
@@ -24,7 +24,8 @@ export const Store = create<Date & Action>((set) => ({
       volume_24h: 0,
       spread: undefined,
     }),
-  newDate: (state) => set({
+  newDate: (state) =>
+    set({
       symbol: state.symbol,
       price_percentage_change_24h: state.price_percentage_change_24h,
       contract_type: state.contract_type,
@@ -34,4 +35,3 @@ export const Store = create<Date & Action>((set) => ({
       spread: state.spread,
     }),
 }));
-

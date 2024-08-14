@@ -71,7 +71,6 @@ export const DashBoard = () => {
             market: {market}
           </span>
           <span className="w-10/12 md:w-full inline-flex bg-white/40 backdrop-blur-md rounded-md px-2 items-center justify-center h-9 md:h-7">
-
             volume_24h: {volume_24h}
           </span>
           <span className="w-10/12 md:w-full inline-flex bg-white/40 backdrop-blur-md rounded-md px-2 items-center justify-center h-9 md:h-7">

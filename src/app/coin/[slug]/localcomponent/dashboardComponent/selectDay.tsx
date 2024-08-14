@@ -1,28 +1,18 @@
 "use client";
-import { useSearchParams, usePathname, useRouter } from "next/navigation";
+import { useSelectDay } from "./useSelectDay";
 
 const intervalday = ["7", "14", "21", "30", "60", "90", "180", "365"];
+/*
+ * Element to select the day range
+ */
 
 export const SelectDay = () => {
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
-  const { replace } = useRouter();
-  const param = new URLSearchParams(searchParams);
-  const value =
-    param.get("days") === undefined ? "30" : (param.get("days") as string);
-  const handelChange = (valueDay: string) => {
-    if (valueDay) {
-      param.set("days", valueDay);
-    } else {
-      param.delete("days");
-    }
-    replace(`${pathname}?${param.toString()}`);
-  };
+  const { handelChange, value } = useSelectDay();
   return (
     <label>
       select day
       <select
-        value={value !== null ? value : "30" }
+        value={value !== null ? value : "30"}
         onChange={(e) => {
           handelChange(e.target.value);
         }}

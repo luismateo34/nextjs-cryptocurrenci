@@ -3,7 +3,7 @@
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 const url = "https://api.coingecko.com/api/v3/coins/list";
-const apikey = process.env.API_COINT
+const apikey = process.env.API_COINT;
 const options = {
   method: "GET",
   headers: { "x-cg-demo-api-key": `${apikey}` },

@@ -3,14 +3,22 @@ import { SelectCurrency } from "./selectCurrency";
 import { SelectDay } from "./selectDay";
 import { currency } from "@/types/coin.types";
 
-export const CardGrafic = ({currencyOpt, days, className}:{ currencyOpt:currency, days:string, className:string }) => {
+export const CardGrafic = ({
+  currencyOpt,
+  days,
+  className,
+}: {
+  currencyOpt: currency;
+  days: string;
+  className: string;
+}) => {
   return (
-    <div className={` ${className}` } >
+    <div className={` ${className}`}>
       <div className="flex flex-row justify-around items-center">
         <SelectDay />
         <SelectCurrency />
       </div>
-      <HistoryPrice  currency={currencyOpt} days={days} />
+      <HistoryPrice currency={currencyOpt} days={days} />
     </div>
   );
 };

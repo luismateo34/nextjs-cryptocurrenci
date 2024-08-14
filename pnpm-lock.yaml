@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@prisma/client':
-        specifier: 5.16.1
-        version: 5.16.1(prisma@5.15.0)
+        specifier: 5.18.0
+        version: 5.18.0(prisma@5.15.0)
       '@prisma/extension-accelerate':
         specifier: ^1.1.0
-        version: 1.1.0(@prisma/client@5.16.1(prisma@5.15.0))
+        version: 1.1.0(@prisma/client@5.18.0(prisma@5.15.0))
       '@radix-ui/react-checkbox':
         specifier: 1.0.4
         version: 1.0.4(@types/react-dom@18.2.19)(@types/react@18.2.61)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1398,8 +1398,8 @@ packages:
       webpack-plugin-serve:
         optional: true
 
-  '@prisma/client@5.16.1':
-    resolution: {integrity: sha512-wM9SKQjF0qLxdnOZIVAIMKiz6Hu7vDt4FFAih85K1dk/Rr2mdahy6d3QP41K62N9O0DJJA//gUDA3Mp49xsKIg==}
+  '@prisma/client@5.18.0':
+    resolution: {integrity: sha512-BWivkLh+af1kqC89zCJYkHsRcyWsM8/JHpsDMM76DjP3ZdEquJhXa4IeX+HkWPnwJ5FanxEJFZZDTWiDs/Kvyw==}
     engines: {node: '>=16.13'}
     peerDependencies:
       prisma: '*'
@@ -7780,7 +7780,7 @@ snapshots:
       type-fest: 2.19.0
       webpack-hot-middleware: 2.26.1
 
-  '@prisma/client@5.16.1(prisma@5.15.0)':
+  '@prisma/client@5.18.0(prisma@5.15.0)':
     optionalDependencies:
       prisma: 5.15.0
 
@@ -7795,9 +7795,9 @@ snapshots:
       '@prisma/fetch-engine': 5.15.0
       '@prisma/get-platform': 5.15.0
 
-  '@prisma/extension-accelerate@1.1.0(@prisma/client@5.16.1(prisma@5.15.0))':
+  '@prisma/extension-accelerate@1.1.0(@prisma/client@5.18.0(prisma@5.15.0))':
     dependencies:
-      '@prisma/client': 5.16.1(prisma@5.15.0)
+      '@prisma/client': 5.18.0(prisma@5.15.0)
 
   '@prisma/fetch-engine@5.15.0':
     dependencies:

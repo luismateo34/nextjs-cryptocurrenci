@@ -35,11 +35,13 @@ export const List = ({ initial }: { initial: Deriv[] }) => {
               />
             );
           })}
-          {isFetchingNextPage && data !== undefined && data?.pages.length <= 1227 && (
-            <div className="text-center text-slate-600 mt-5">
-              <span className={loader.loader}></span>
-            </div>
-          )}
+          {isFetchingNextPage &&
+            data !== undefined &&
+            data?.pages.length <= 1227 && (
+              <div className="text-center text-slate-600 mt-5">
+                <span className={loader.loader}></span>
+              </div>
+            )}
           <div className="text-center text-slate-600 mt-5">
             {data !== undefined && data?.pages.length <= 1227 ? (
               <div ref={observerTarget}></div>

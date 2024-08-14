@@ -14,8 +14,10 @@ export default async function Page({
     searchParams?.currency === undefined
       ? ("usd" as currency)
       : (searchParams?.currency as currency);
+
   const days =
     searchParams?.days === undefined ? "30" : (searchParams?.days as string);
+
   const data = await dataCoin(searchParams?.currency, searchParams?.ids);
   return (
     <main className="w-screen h-[calc(100vh-3rem)] flex flex-col justify-around items-center pt-14  lg:pt-0">
@@ -27,6 +29,7 @@ export default async function Page({
               key={el.id}
               className="mt-12 lg:mt-3 flex flex-col justify-between items-stretch lg:grid lg:grid-cols-3 lg:grid-rows-2 gap-2 w-full lg:h-5/6"
             >
+              {/*Cryptocurrency Data Card */}
               <CardTwo
                 current_price={el.current_price}
                 high_24h={el.high_24h}
@@ -43,6 +46,7 @@ export default async function Page({
                 key={el.id}
                 className="lg:col-start-3 lg:col-end-4 lg:row-start-1 lg:row-end-3 w-11/12 px-2 mx-auto"
               />
+              {/* dinamic grafic*/}
               <CardGrafic
                 currencyOpt={currencyOpt}
                 days={days}
