@@ -12,7 +12,7 @@ export const data = async (
   }
   try {
     const data = await fetch(`${url}${apicoint}?name=${name}`);
-    if (!data.ok || data.status === 500) {
+    if (data.ok === false || data.status === 500 ) {
       throw new Error();
     }
     const json: jsonCoint = await data.json();
