@@ -41,7 +41,6 @@ export const Coints = async ({ name }: { name: string }) => {
           coint.map((el) => {
             return (
               <tr key={el.id}>
-                <td>{el.name}</td>
                 <td> error en el servicio</td>
               </tr>
             );
