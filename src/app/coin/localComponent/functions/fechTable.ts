@@ -10,7 +10,9 @@ export const data = async (
   try {
     if (name === undefined) return undefined;
     const data = await fetch(`${url}${apicoint}?name=${name}`);
-    if (!data.ok || data.status === 500) throw new Error();
+    if (!data.ok || data.status === 500) {
+      throw new Error();
+    }
     const json: jsonCoint = await data.json();
 
     return json.coints;
