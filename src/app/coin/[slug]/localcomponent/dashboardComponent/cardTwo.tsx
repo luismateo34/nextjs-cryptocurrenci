@@ -1,6 +1,7 @@
 import { GraficCircule } from "@/components/graficCircule";
 import { Card, CardContent } from "@/components/ui/card";
 import { FC } from "react";
+import { MoreData } from "./MoreData";
 
 interface cardParam {
   image: string;
@@ -31,7 +32,7 @@ export const CardTwo: FC<cardParam> = ({
 }) => {
   return (
     <Card
-      className={` ${className} flex flex-col justify-between items-stretch gap-2 bg-blue-900/15 backdrop-blur-sm `}
+      className={` ${className} mt-32 md:mt-0 flex flex-col justify-between items-stretch gap-2 bg-blue-900/15 backdrop-blur-sm `}
     >
       <CardContent>
         <div className="flex flex-row justify-between items-center rounded-lg bg-slate-200/90 backdrop-blur-sm my-3 relative">
@@ -47,24 +48,12 @@ export const CardTwo: FC<cardParam> = ({
           Currenprice: {current_price}
         </div>
         {/* muestra targeta con mas datos  */}
-        <div className="w-full flex flex-row justify-between gap-1 ">
-          <div className=" w-full flex flex-row justify-between gap-1 z-10 absolute  ">
-            <details className="z-10 w-10/12">
-              <summary className="bg-gray-300 rounded-sm text-blue-950 mx-auto font-semibold text-base px-4">
-                More data
-              </summary>
-              <section className=" w-full flex flex-col justify-around items-center text-amber-300  bg-black/65 backdrop-blur-sm rounded-md">
-                <div> high_24: {high_24h}</div>
-                <div> low_24: {low_24h}</div>
-                <div> ranking : {market_cap_rank}</div>
-                <div>"market_cap_change_percentage_24h:</div>
-                <div className="text-red-600">
-                  {market_cap_change_percentage_24h}
-                </div>
-              </section>
-            </details>
-          </div>
-        </div>
+        <MoreData
+          high_24h={high_24h}
+          low_24h={low_24h}
+          market_cap_change_percentage_24h={market_cap_change_percentage_24h}
+          market_cap_rank={market_cap_rank}
+        />
         {/*grafico circular*/}
         <div className="flex flex-col justify-center items-center mt-4 p-1">
           <GraficCircule

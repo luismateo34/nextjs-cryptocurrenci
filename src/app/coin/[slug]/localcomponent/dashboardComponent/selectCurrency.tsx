@@ -30,7 +30,7 @@ export const SelectCurrency = () => {
         onChange={(e) => {
           handelChange(e.target.value);
         }}
-        className="pl-2 w-44 h-7 block text-black bg-orange-400 rounded-sm"
+        className="pl-2 w-8/12  md:w-44 h-7 block text-black bg-orange-400 rounded-sm"
       >
         <option disabled={true} value="">
           select currency

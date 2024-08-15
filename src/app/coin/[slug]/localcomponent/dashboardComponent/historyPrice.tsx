@@ -12,7 +12,7 @@ export const HistoryPrice = async ({
   const dataCoin = await historyCoin(currency, days);
 
   return (
-    <section className=" w-full h-10/12">
+    <section className="w-full  h-[50vh] md:h-5/6">
       {typeof dataCoin !== "string" && (
         <GraficLine
           data={dataCoin.prices.map((el) => el[1].toString())}
