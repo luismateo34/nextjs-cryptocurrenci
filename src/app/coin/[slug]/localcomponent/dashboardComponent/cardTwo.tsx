@@ -34,23 +34,25 @@ export const CardTwo: FC<cardParam> = ({
       className={` ${className} flex flex-col justify-between items-stretch gap-2 bg-blue-900/15 backdrop-blur-sm `}
     >
       <CardContent>
-        <div className="flex flex-row justify-between items-center rounded-lg bg-slate-200/90 backdrop-blur-sm my-3">
-          <figure>
+        <div className="flex flex-row justify-between items-center rounded-lg bg-slate-200/90 backdrop-blur-sm my-3 relative">
+          <figure className="ml-1">
             <img src={image} alt={`${name} image`} className="h-11 w-11" />
           </figure>
-          <div className="text-blue-950 mx-auto font-semibold text-lg">
+          <div className="text-blue-950 font-semibold text-lg absolute right-1/2">
             {symbol}
           </div>
         </div>
         {/* price*/}
-        <div className="mr-auto my-3 px-2 h-5 w-full rounded-md bg-sky-900/35">
-          currenprice: {current_price}
+        <div className="mr-auto my-3 px-4 h-5 w-full rounded-md bg-amber-300 text-blue-800 text-base font-semibold">
+          Currenprice: {current_price}
         </div>
         {/* muestra targeta con mas datos  */}
-        <div className="w-full flex flex-row justify-between gap-1 rtive ">
+        <div className="w-full flex flex-row justify-between gap-1 ">
           <div className=" w-full flex flex-row justify-between gap-1 z-10 absolute  ">
             <details className="z-10 w-10/12">
-              <summary>More data</summary>
+              <summary className="bg-gray-300 rounded-sm text-blue-950 mx-auto font-semibold text-base px-4">
+                More data
+              </summary>
               <section className=" w-full flex flex-col justify-around items-center text-amber-300  bg-black/65 backdrop-blur-sm rounded-md">
                 <div> high_24: {high_24h}</div>
                 <div> low_24: {low_24h}</div>
@@ -64,7 +66,7 @@ export const CardTwo: FC<cardParam> = ({
           </div>
         </div>
         {/*grafico circular*/}
-        <div className="flex flex-col justify-center items-center mt-2 p-1">
+        <div className="flex flex-col justify-center items-center mt-4 p-1">
           <GraficCircule
             porcentaje={price_change_percentage_24h}
             key={id}

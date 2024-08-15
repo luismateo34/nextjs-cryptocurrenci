@@ -21,7 +21,7 @@ export default async function Page({
   const data = await dataCoin(searchParams?.currency, searchParams?.ids);
   return (
     <main className="w-screen h-[calc(100vh-3rem)] flex flex-col justify-around items-center pt-14  lg:pt-0">
-      <h1 className="my-4  ">{params.slug}</h1>
+      <h1 className="my-4  text-lg font-semibold underline decoration-solid">{params.slug}</h1>
       {typeof data !== "string" &&
         data.map((el) => {
           return (

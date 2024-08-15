@@ -21,14 +21,16 @@ const currencyARR: currency[] = [
 export const SelectCurrency = () => {
   const { handelChange, value } = useCurrency();
   return (
-    <label>
-      select currency
+    <label className="text-base font-semibold" >
+      <span className="pl-2">
+      Select currency
+      </span>
       <select
         value={value !== null ? value : "usd"}
         onChange={(e) => {
           handelChange(e.target.value);
         }}
-        className="w-44 h-5 block text-black bg-orange-400 rounded-sm"
+        className="pl-2 w-44 h-7 block text-black bg-orange-400 rounded-sm"
       >
         <option disabled={true} value="">
           select currency

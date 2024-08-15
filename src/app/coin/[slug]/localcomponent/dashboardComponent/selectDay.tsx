@@ -9,14 +9,16 @@ const intervalday = ["7", "14", "21", "30", "60", "90", "180", "365"];
 export const SelectDay = () => {
   const { handelChange, value } = useSelectDay();
   return (
-    <label>
-      select day
+    <label className="text-base font-semibold">
+      <span className="pl-2">
+      Select day
+      </span>
       <select
         value={value !== null ? value : "30"}
         onChange={(e) => {
           handelChange(e.target.value);
         }}
-        className="w-44 h-5 block text-black bg-orange-400 rounded-sm"
+        className="pl-2 w-44 h-7 block text-black bg-orange-400 rounded-sm"
       >
         <option disabled={true} value="">
           select day
