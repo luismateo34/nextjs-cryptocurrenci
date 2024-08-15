@@ -7,7 +7,7 @@ export const fetchDerivate = async (pageParam: number): Promise<Deriv[]> => {
   try {
     const fetcher = await fetch(`${derurl}${apiDeribaties}?pag=${pageParam}`);
     const json: Derivate = await fetcher.json();
-    if (!fetcher.ok || fetcher.status === 500) {
+    if (fetcher.ok === false || fetcher.status === 500) {
       throw new Error("error");
     }
     return json.derivateCripto;

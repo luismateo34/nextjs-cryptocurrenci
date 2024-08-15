@@ -16,7 +16,7 @@ export const SearchInput = ({ placeholder }: { placeholder: string }) => {
       }}
       placeholder={placeholder}
       defaultValue={searchParams.get("name")?.toString()}
-      className="w-4/12 h-8 my-3"
+      className="w-4/12 h-8 my-3 bg-black/25 text-yellow-400 text-base font-semibold"
       suppressHydrationWarning={true}
     />
   );
