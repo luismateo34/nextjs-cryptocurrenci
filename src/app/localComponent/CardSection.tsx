@@ -7,7 +7,7 @@ import { Section } from "@/components/section";
 export const CardSection = () => {
   return (
     <Section>
-      <div className="h-full w-full   grid grid-flow-col grid-rows-3  md:grid-cols-3 md:grid-rows-1 items-center gap-2 justify-items-center ">
+      <div className="h-full w-full  grid grid-flow-col grid-rows-3  md:grid-cols-3 md:grid-rows-1 items-center gap-2 justify-items-center ">
         <CardImage
           image={cardano.src}
           route="https://ethereum.org/en/smart-contracts/"

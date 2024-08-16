@@ -19,17 +19,31 @@ ChartJs.register(
   PointElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
 );
-const dataOption = (labels: string[], data: string[], label: string) => {
+
+export interface Option {
+  labels: string[];
+  data: string[];
+  label: string;
+  borderColor: string[];
+  borderWidth: number;
+}
+const dataOption = ({
+  label,
+  labels,
+  data,
+  borderColor,
+  borderWidth,
+}: Option) => {
   const dateoptions = {
     labels: labels,
     datasets: [
       {
         label: label,
         data: data,
-        borderColor: ["rgba(233, 213, 2, 1)"],
-        borderWidth: 2,
+        borderColor: borderColor ,
+        borderWidth: borderWidth,
       },
     ],
   };
@@ -40,12 +54,10 @@ export const GraficLine = ({
   labels,
   data,
   label,
-}: {
-  labels: string[];
-  data: string[];
-  label: string;
-}) => {
+  borderWidth = 2,
+  borderColor = ["rgba(233, 213, 2, 1)"],
+}: Option) => {
   if (labels === null || data === null || label === undefined) return null;
-  const date = dataOption(labels, data, label);
+  const date = dataOption({borderColor,borderWidth,data,label,labels });
   return <Line data={date} className="w-full h-full" />;
 };

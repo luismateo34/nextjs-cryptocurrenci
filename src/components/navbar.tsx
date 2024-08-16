@@ -11,7 +11,7 @@ const routerObj = {
   other: "/other",
 };
 
-interface TypeNav {
+ export interface TypeNav {
   primary: boolean;
   size: "small" | "medium" | "big";
   className?: string;
