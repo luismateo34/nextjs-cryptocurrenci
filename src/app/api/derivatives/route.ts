@@ -1,6 +1,7 @@
 import prisma from "@/server/prisma";
-//export const dynamic = "force-dynamic";
 import { NextResponse, type NextRequest } from "next/server";
+
+import {SanitizedSql} from "@/server/sanitizedSql"
 /*
  *Derivatecripto = 1227 valores
  * 246 paginas de 5 elementos
@@ -10,10 +11,11 @@ import { NextResponse, type NextRequest } from "next/server";
 export async function GET(req: NextRequest) {
   try {
     const pag = req.nextUrl.searchParams.get("pag");
+    const pagSanity = SanitizedSql(pag)
     if (pag === "" || pag === null) {
       return NextResponse.json({ message: "coint not found" });
     }
-    const init = (Number(pag) - 1) * 20;
+    const init = (Number(pagSanity) - 1) * 20;
     const derivateCripto = await prisma.derivateCripto.findMany({
       skip: init,
       take: 20,
