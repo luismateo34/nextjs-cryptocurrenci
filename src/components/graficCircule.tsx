@@ -1,4 +1,5 @@
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import style from "./graficCircule.module.css";
 
 export const GraficCircule = ({
   porcentaje,
@@ -6,14 +7,12 @@ export const GraficCircule = ({
   className,
 }: {
   porcentaje: number;
-  title?: string;
+  title: string;
   className?: string;
 }) => {
   const value = porcentaje >= 0 ? porcentaje : porcentaje * -1;
   return (
-    <Card
-      className={` w-48 lg:w-52 h-72 flex flex-col justify-around items-center gap-2 bg-blue-900 text-orange-500 ${className}`}
-    >
+    <Card className={` w-48 lg:w-52 ${style.Card} ${className}`}>
       <CardHeader className="w-full flex flex-col justify-center items-center mb-3">
         <div className="flex flex-col justify-center w-full h-6">
           {title !== undefined && (
@@ -24,8 +23,8 @@ export const GraficCircule = ({
           <h3 className="mx-auto">change % 24hs</h3>
         </div>
       </CardHeader>
-      <CardContent className="grid grid-cols-1 justify-items-center content-center w-44 h-44  mb-6">
-        <svg className="col-start-1 col-end-2 row-start-1 row-end-2 w-44 h-44 flex flex-col justify-center items-center ">
+      <CardContent className={style.CardContent}>
+        <svg className={style.svg}>
           <circle
             r="82"
             cx="50%"
@@ -35,7 +34,7 @@ export const GraficCircule = ({
             className="fill-none stroke-amber-200 stroke-[12px] -rotate-90 origin-center  "
           />
         </svg>
-        <svg className="col-start-1 col-end-2 row-start-1 row-end-2 w-44 h-44 flex flex-col justify-center items-center">
+        <svg className={style.svg}>
           <circle
             r="82"
             cx="50%"
@@ -47,7 +46,7 @@ export const GraficCircule = ({
             } stroke-[12px] -rotate-90 origin-center`}
           />
         </svg>
-        <div className=" justify-self-center col-start-1 col-end-2 row-start-1 row-end-2 w-44 h-44  flex flex-col justify-center items-center">
+        <div className={style.porcentaje}>
           <div>{porcentaje.toFixed(2)} %</div>
         </div>
       </CardContent>

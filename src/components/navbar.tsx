@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+import style from "./navbar.module.css";
 
 const routerObj = {
   home: "/",
@@ -11,7 +12,7 @@ const routerObj = {
   other: "/other",
 };
 
- export interface TypeNav {
+export interface TypeNav {
   primary: boolean;
   size: "small" | "medium" | "big";
   className?: string;
@@ -25,16 +26,14 @@ export const NavBar = ({
   const router = usePathname();
 
   return (
-    <div className="w-screen flex flex-row sticky top-0 p-0 m-0 z-20 backdrop-blur-md shadow-md bg-whibg-blue-900/20 shadow-yellow-300/60 ">
-      <nav
-        className={`w-screen h-12  m-0 p-0 flex flex-row border-solid border-b-2 border-b-yellow-400 bg-black/20 `}
-      >
-        <ul className="w-screen h-full flex m-0 px-2 flex-row gap-1  justify-around">
+    <div className={style.container}>
+      <nav className={style.nav_container}>
+        <ul className={style.ul_container}>
           {Object.entries(routerObj).map(([key, value]) => {
             return (
               <li
                 key={key}
-                className="h-full w-1/5 flex flex-row justify-center items-center text-sm md:text-lg text-red-500"
+                className={style.li_container}
               >
                 <Link
                   href={value}
@@ -45,7 +44,7 @@ export const NavBar = ({
                           primary === true,
                         " hover:bg-gradient-to-r from-white/40 to-black/15  active:border-orange-400":
                           primary === false,
-                        "w-16 h-full": size === "small",
+                        "w-20 h-full": size === "small",
                         "w-24 h-full": size === "medium",
                         "w-28 h-full": size === "big",
                       },
@@ -55,8 +54,8 @@ export const NavBar = ({
                           ? " bg-gradient-to-r from-amber-400 from-10% via-amber-300 via-30% to-yellow-300 to-90% text-red-700"
                           : " text-amber-300 "
                       }`,
-                      className
-                    )
+                      className,
+                    ),
                   )}
                 >
                   {key}
