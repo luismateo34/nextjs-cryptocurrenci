@@ -29,6 +29,7 @@
 	align-items: center;
 	margin-top: 0.25rem;
 	inset: 0px;
+        box-sizing: border-box;
 }
 
 @Media (min-width: 768px) {

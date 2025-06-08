@@ -13,7 +13,7 @@ export const CardGrafic = ({
   className: string;
 }) => {
   return (
-    <div className={` ${className}`}>
+    <div className={` ${className}`} key={crypto.randomUUID()}>
       <div className="flex flex-row justify-around items-center">
         <SelectDay />
         <SelectCurrency />

@@ -1,4 +1,4 @@
-import { type ReactNode } from "react";
+import { JSX, type ReactNode } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import style from "./card.module.css";
 
@@ -36,7 +36,7 @@ export const CardImage = ({
           className={`  backdrop-blur-sm md:backdrop-blur-0   ${style.container_a}`}
         >
           <a
-            className=" font-semibold text-lg text-center  tracking-wider text-red-600 flex flex-row justify-center items-center  w-14 h-6 "
+            className=" font-semibold text-lg text-center  tracking-wider text-red-600 flex flex-row justify-center items-center  w-full h-6 "
             href={`${route}`}
             target="_blank"
           >

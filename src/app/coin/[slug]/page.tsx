@@ -7,21 +7,21 @@ export default async function Page({
   params,
   searchParams,
 }: {
-  params: { slug: string };
-  searchParams?: { ids: string; currency: string; days: string };
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ ids: string; currency: string; days: string }>;
 }) {
+  const {  slug } = await params;
+  const { currency, days, ids } = await searchParams;
   const currencyOpt: currency =
-    searchParams?.currency === undefined
+    currency === undefined
       ? ("usd" as currency)
-      : (searchParams?.currency as currency);
+      : (currency as currency);
 
-  const days =
-    searchParams?.days === undefined ? "30" : (searchParams?.days as string);
 
-  const data = await dataCoin(searchParams?.currency, searchParams?.ids);
+  const data = await dataCoin(currency,ids);
   return (
     <main className="w-screen h-[calc(100vh-3rem)] flex flex-col justify-around items-center pt-14  lg:pt-0">
-      <h1 className="my-4  text-lg font-semibold underline decoration-solid">{params.slug}</h1>
+      <h1 className="my-4  text-lg font-semibold underline decoration-solid">{slug}</h1>
       {typeof data !== "string" &&
         data.map((el) => {
           return (
@@ -49,7 +49,7 @@ export default async function Page({
               {/* dinamic grafic*/}
               <CardGrafic
                 currencyOpt={currencyOpt}
-                days={days}
+                days={days ?? "30"}
                 key={el.id}
                 className="lg:col-start-1 lg:col-end-3 lg:row-start-1 lg:row-end-3 lg:h-full h-[50vh] w-full`"
               />

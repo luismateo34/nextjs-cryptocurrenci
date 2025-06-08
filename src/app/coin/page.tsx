@@ -3,18 +3,18 @@ import { Coints } from "@/app/coin/localComponent/tableCoint";
 import { Suspense } from "react";
 import { LoaderComponent } from "@/app/coin/localComponent/clientComponent/loader/loader";
 import dynamic from "next/dynamic";
-const Skeleton = dynamic(
-  () =>
-    import("./localComponent/tableSkeleton").then((mod) => mod.TableSkeleton),
-  { ssr: false }
-);
+import { TableSkeleton } from "./localComponent/tableSkeleton";
+//const Skeleton = dynamic(
+  //() =>
+    //import("./localComponent/tableSkeleton").then((mod) => mod.TableSkeleton),
+//);
 
 export default async function Page({
   searchParams,
 }: {
-  searchParams?: { name?: string };
+  searchParams: Promise<{ name?: string }>;
 }) {
-  const name = searchParams?.name ?? "";
+  const { name } =  await searchParams;
   return (
     <>
       <main className="w-screen h-[calc(100vh-3rem)]  flex flex-col  items-center ">
@@ -30,8 +30,8 @@ export default async function Page({
           </div>
           <div className="flex flex-col justify-around items-center gap-3 relative pt-4">
             {/* lsit of criptocurrency*/}
-            <Suspense key={name} fallback={<Skeleton />}>
-              <Coints name={name} key={name} />
+            <Suspense key={crypto.randomUUID()} fallback={<TableSkeleton />}>
+              <Coints name={name ?? ""} key={crypto.randomUUID()} />
             </Suspense>
           </div>
         </div>

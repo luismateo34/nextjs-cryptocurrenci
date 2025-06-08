@@ -26,8 +26,8 @@ export interface Option {
   labels: string[];
   data: string[];
   label: string;
-  borderColor: string[];
-  borderWidth: number;
+  borderColor?: string[];
+  borderWidth?: number;
 }
 const dataOption = ({
   label,
