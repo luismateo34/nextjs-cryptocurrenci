@@ -43,6 +43,10 @@ export const Provider = ({
 }: Readonly<{ children: React.ReactNode }>) => {
   const queryClient = getQueryClient();
   return (
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    <>
+        <QueryClientProvider client={queryClient}>
+          {children}
+        </QueryClientProvider>
+    </>
   );
 };

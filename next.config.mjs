@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+experimental: {
+    viewTransition: true,
+  },
+allowedDevOrigins: ['127.0.0.1',],
   async headers() {
     return [
       {

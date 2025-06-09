@@ -14,6 +14,7 @@ export const SelectDay = () => {
       Select day
       </span>
       <select
+        //value={value !== null ? value : "30"}
         value={value !== null ? value : "30"}
         onChange={(e) => {
           handelChange(e.target.value);
