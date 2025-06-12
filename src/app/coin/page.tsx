@@ -3,7 +3,7 @@ import { Coints } from "@/app/coin/localComponent/tableCoint";
 import { Suspense } from "react";
 import { LoaderComponent } from "@/app/coin/localComponent/clientComponent/loader/loader";
 import { TableSkeleton } from "./localComponent/tableSkeleton";
-import { unstable_ViewTransition as ViewTransition } from "react";
+import { unstable_ViewTransition as ViewTransition,  } from "react";
 
 export default async function Page({
   searchParams,

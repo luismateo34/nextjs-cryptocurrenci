@@ -3,7 +3,7 @@ const nextConfig = {
 experimental: {
     viewTransition: true,
   },
-allowedDevOrigins: ['127.0.0.1',],
+allowedDevOrigins: ['127.0.0.1'],
   async headers() {
     return [
       {

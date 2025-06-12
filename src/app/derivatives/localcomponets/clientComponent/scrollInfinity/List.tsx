@@ -42,7 +42,7 @@ export const List = ({ initial }: { initial: Deriv[] }) => {
                 <span className={loader.loader}></span>
               </div>
             )}
-          <div className="text-center text-slate-600 mt-5">
+          <div className="text-center text-slate-600 mt-3">
             {data !== undefined && data?.pages.length <= 1227 ? (
               <div ref={observerTarget}></div>
             ) : (
