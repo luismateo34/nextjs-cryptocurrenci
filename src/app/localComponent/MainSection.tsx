@@ -11,7 +11,7 @@ export const MainSection = () => {
           </h1>
           <h2 className="text-base md:text-2xl font-semibold ">
             cryptocurrenci, nft
-            <br /> and more
+            <br />and more
           </h2>
           <p className=" text-base lg:text-xl text-amber-400 flex flex-col h-1/3   ">
             Elit convallis tempor pellentesque cras dignissim tempor vestibulum

@@ -1,7 +1,7 @@
 import prisma from "@/server/prisma";
 import { NextResponse, type NextRequest } from "next/server";
 
-import {SanitizedSql} from "@/server/sanitizedSql"
+import { SanitizedSql } from "@/server/sanitizedSql";
 /*
  *Derivatecripto = 1227 valores
  * 246 paginas de 5 elementos
@@ -11,7 +11,7 @@ import {SanitizedSql} from "@/server/sanitizedSql"
 export async function GET(req: NextRequest) {
   try {
     const pag = req.nextUrl.searchParams.get("pag");
-    const pagSanity = SanitizedSql(pag)
+    const pagSanity = SanitizedSql(pag);
     if (pag === "" || pag === null) {
       return NextResponse.json({ message: "coint not found" });
     }
@@ -25,7 +25,7 @@ export async function GET(req: NextRequest) {
   } catch {
     return NextResponse.json(
       { error: "Internal Server Error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

@@ -30,12 +30,12 @@ export default async function Page({
             {/* lsit of criptocurrency*/}
             <ViewTransition>
               {name !== undefined && (
-                  <Suspense
-                    key={crypto.randomUUID()}
-                    fallback={<TableSkeleton />}
-                  >
-                    <Coints name={name ?? ""} key={crypto.randomUUID()} />
-                  </Suspense>
+                <Suspense
+                  key={crypto.randomUUID()}
+                  fallback={<TableSkeleton />}
+                >
+                  <Coints name={name ?? ""} key={crypto.randomUUID()} />
+                </Suspense>
               )}
             </ViewTransition>
           </div>

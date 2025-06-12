@@ -15,8 +15,8 @@ export const Maincard = ({ primary, secundary }: typeMain) => {
     <div
       className={twMerge(
         clsx(`${inter.className}`, " w-screen  ", {
-          "bg-blue-950": (primary === true),
-          "bg-indigo-900": (secundary === true),
+          "bg-blue-950": primary === true,
+          "bg-indigo-900": secundary === true,
         }),
       )}
     >

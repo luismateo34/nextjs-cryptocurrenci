@@ -20,10 +20,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} bg-blue-950 text-white w-screen `}>
         <Provider>
-            <div className="relative snap-y   md:snap-mandatory  w-screen h-screen overflow-y-auto overflow-x-hidden  scroll-smooth ">
-              <NavBar primary={false} size="medium" />
-              {children}
-            </div>
+          <div className="relative snap-y   md:snap-mandatory  w-screen h-screen overflow-y-auto overflow-x-hidden  scroll-smooth ">
+            <NavBar primary={false} size="medium" />
+            {children}
+          </div>
         </Provider>
       </body>
     </html>

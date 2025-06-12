@@ -1,4 +1,4 @@
-h1.other {
+.title {
   color: rgba(236, 228, 12, 1);
   font-size: 20px;
   margin-right: auto;
@@ -8,13 +8,13 @@ h1.other {
   margin-bottom: 10px;
   text-decoration: underline;
 }
-h2.other {
+.subtitle {
   color:rgba(249, 191, 34, 1);
   font-size: 18px;
   text-decoration: underline;
 }
 
-p.other {
+.paragraph {
   color: white;
   font-size: 16px;
   letter-spacing: 2px;
@@ -23,7 +23,7 @@ p.other {
   display: block;
   line-height: 1.5;
 }
-ul.other {
+.ulist {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -32,18 +32,18 @@ ul.other {
 }
 
 @media (min-width: 768px){
-  h1.other{
+  .title{
     font-size: 22px;
   }
-  p.other {
+  .paragraph {
     font-size: 18 px ;
   }
-  h2.other{
+  .subtitle{
     font-size: 20;
   }
 }
 
-article.other {
+.article {
   min-width: 100%;
   min-height: 100%;
   height: calc(100vh - 3rem);
@@ -52,7 +52,7 @@ article.other {
   gap: 25px;
   align-items: center;
 }
-a.other{
+.anchor{
   color: rgba(240, 32, 32, 1);
   text-decoration: underline;
   display: inline;

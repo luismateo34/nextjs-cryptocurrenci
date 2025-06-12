@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import {LinearGraf} from "./LinearGrafTest"
+import { LinearGraf } from "./LinearGrafTest";
 const meta = {
   title: "Components/GraficLine",
   component: LinearGraf,
@@ -18,21 +18,19 @@ export const Primary: Story = {
   args: {
     borderColor: ["rgba(248, 253, 3, 1)"],
     borderWidth: 2,
-    data: ["1", "2","3","12","32","11","9"],
+    data: ["1", "2", "3", "12", "32", "11", "9"],
     label: "crypto",
-    labels:["uno", "dos", "tres", "cuatro", "cinco", "seis","siete"],
-    primary: true
-  }
+    labels: ["uno", "dos", "tres", "cuatro", "cinco", "seis", "siete"],
+    primary: true,
+  },
 };
 export const Secundary: Story = {
   args: {
     borderColor: ["rgba(255, 101, 0, 1)"],
     borderWidth: 4,
-    data: ["1", "2","3","12","32","11","9"],
+    data: ["1", "2", "3", "12", "32", "11", "9"],
     label: "crypto",
-    labels:["uno", "dos", "tres", "cuatro", "cinco", "seis","siete"],
+    labels: ["uno", "dos", "tres", "cuatro", "cinco", "seis", "siete"],
     secundary: true,
-  }
+  },
 };
-
-

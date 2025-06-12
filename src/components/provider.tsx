@@ -44,9 +44,7 @@ export const Provider = ({
   const queryClient = getQueryClient();
   return (
     <>
-        <QueryClientProvider client={queryClient}>
-          {children}
-        </QueryClientProvider>
+      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
     </>
   );
 };

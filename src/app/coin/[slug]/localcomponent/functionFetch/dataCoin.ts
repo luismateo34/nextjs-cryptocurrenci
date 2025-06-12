@@ -11,7 +11,7 @@ const options = {
  */
 export const dataCoin = async (
   currency: string | undefined,
-  ids: string | undefined
+  ids: string | undefined,
 ): Promise<Root | string> => {
   try {
     if (ids === undefined) throw new Error("error");

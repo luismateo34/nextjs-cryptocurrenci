@@ -58,7 +58,7 @@ export const CardTwo: FC<cardParam> = ({
         <div className="flex flex-col justify-center items-center mt-4 p-1">
           <GraficCircule
             porcentaje={price_change_percentage_24h}
-	    title={name}
+            title={name}
             key={id}
             className="mt-3 bg-blue-900 "
           />

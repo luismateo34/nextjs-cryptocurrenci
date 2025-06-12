@@ -13,7 +13,7 @@ interface Root {
 
 export const historyCoin = async (
   currency: currency,
-  days: string
+  days: string,
 ): Promise<Root | "error"> => {
   const url = `https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=${currency}&days=${days}&interval=daily&precision=1`;
 

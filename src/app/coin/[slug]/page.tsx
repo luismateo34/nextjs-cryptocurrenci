@@ -10,18 +10,17 @@ export default async function Page({
   params: Promise<{ slug: string }>;
   searchParams: Promise<{ ids: string; currency: string; days: string }>;
 }) {
-  const {  slug } = await params;
+  const { slug } = await params;
   const { currency, days, ids } = await searchParams;
   const currencyOpt: currency =
-    currency === undefined
-      ? ("usd" as currency)
-      : (currency as currency);
+    currency === undefined ? ("usd" as currency) : (currency as currency);
 
-
-  const data = await dataCoin(currency,ids);
+  const data = await dataCoin(currency, ids);
   return (
     <main className="w-screen h-[calc(100vh-3rem)] flex flex-col justify-around items-center pt-14  lg:pt-0">
-      <h1 className="my-4  text-lg font-semibold underline decoration-solid">{slug}</h1>
+      <h1 className="my-4  text-lg font-semibold underline decoration-solid">
+        {slug}
+      </h1>
       {typeof data !== "string" &&
         data.map((el) => {
           return (

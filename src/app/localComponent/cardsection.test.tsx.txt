@@ -1,0 +1,13 @@
+import { describe, it, afterEach, expect } from "vitest";
+import { render, cleanup } from "@testing-library/react";
+import { CardSection } from "./CardSection";
+
+describe("card section", (): void => {
+  afterEach(cleanup);
+  it("should render card section", (): void => {
+    const { getByText } = render(<CardSection />);
+    expect(getByText("smart-contracts")).toBeDefined();
+    expect(getByText("nft")).toBeDefined();
+    expect(getByText("smart-contracts")).toBeDefined();
+  });
+});

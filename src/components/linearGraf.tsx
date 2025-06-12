@@ -42,7 +42,7 @@ const dataOption = ({
       {
         label: label,
         data: data,
-        borderColor: borderColor ,
+        borderColor: borderColor,
         borderWidth: borderWidth,
       },
     ],
@@ -58,6 +58,6 @@ export const GraficLine = ({
   borderColor = ["rgba(233, 213, 2, 1)"],
 }: Option) => {
   if (labels === null || data === null || label === undefined) return null;
-  const date = dataOption({borderColor,borderWidth,data,label,labels });
+  const date = dataOption({ borderColor, borderWidth, data, label, labels });
   return <Line data={date} className="w-full h-full" />;
 };

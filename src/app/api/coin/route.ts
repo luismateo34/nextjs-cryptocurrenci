@@ -1,11 +1,11 @@
 import prisma from "@/server/prisma";
 export const dynamic = "force-dynamic";
 import { NextResponse, type NextRequest } from "next/server";
-import {SanitizedSql} from "@/server/sanitizedSql"
+import { SanitizedSql } from "@/server/sanitizedSql";
 
 export async function GET(req: NextRequest) {
   const namecoint = req.nextUrl.searchParams.get("name");
-  const namecointSanitized = SanitizedSql(namecoint)
+  const namecointSanitized = SanitizedSql(namecoint);
   if (namecoint === "" || namecoint === null) {
     return NextResponse.json({ message: "coint not found" });
   }
@@ -22,7 +22,7 @@ export async function GET(req: NextRequest) {
   } catch {
     return NextResponse.json(
       { error: "Internal Server Error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

@@ -2,7 +2,6 @@
 import { JSX, type ReactNode } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import style from "./card.module.css";
-import { unstable_ViewTransition as ViewTransition } from "react";
 
 interface CardType {
   children: JSX.Element | ReactNode;
@@ -22,7 +21,6 @@ export const CardImage = ({
   nameRoute,
 }: CardType) => {
   return (
-    <ViewTransition>
       <Card
         className={`${style.Card} hover:bg-violet-900/10 hover:scale-y-105 hover:scale-x-105  ${className}`}
       >
@@ -52,6 +50,5 @@ export const CardImage = ({
           </article>
         </CardContent>
       </Card>
-    </ViewTransition>
   );
 };

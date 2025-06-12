@@ -31,10 +31,7 @@ export const NavBar = ({
         <ul className={style.ul_container}>
           {Object.entries(routerObj).map(([key, value]) => {
             return (
-              <li
-                key={key}
-                className={style.li_container}
-              >
+              <li key={key} className={style.li_container}>
                 <Link
                   href={value}
                   className={twMerge(

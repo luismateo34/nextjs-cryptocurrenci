@@ -24,7 +24,7 @@ export const SelectCurrency = () => {
     <label className="text-base font-semibold">
       <span className="pl-2">Select currency</span>
       <select
-        value={value}
+        value={value ?? "30"}
         onChange={(e) => {
           handelChange(e.target.value);
         }}

@@ -10,12 +10,9 @@ export const SelectDay = () => {
   const { handelChange, value } = useSelectDay();
   return (
     <label className="text-base font-semibold">
-      <span className="pl-2">
-      Select day
-      </span>
+      <span className="pl-2">Select day</span>
       <select
-        //value={value !== null ? value : "30"}
-        value={value !== null ? value : "30"}
+        value={value ?? "30"}
         onChange={(e) => {
           handelChange(e.target.value);
         }}

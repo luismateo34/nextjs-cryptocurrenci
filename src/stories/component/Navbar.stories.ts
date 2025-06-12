@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import {NavBarTest} from "./navbarTest"
+import { NavBarTest } from "./navbarTest";
 
 const meta = {
   title: "Components/Navbar",
@@ -16,90 +16,89 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  args:{
+  args: {
     primary: true,
     size: "big",
     primaryBg: true,
-  }
-}
+  },
+};
 export const Secundar: Story = {
-  args:{
+  args: {
     primary: true,
     size: "medium",
     primaryBg: true,
-  }
-}
+  },
+};
 export const Tertiary: Story = {
-  args:{
+  args: {
     primary: true,
     size: "small",
     primaryBg: true,
-  }
-}
+  },
+};
 export const Fourth: Story = {
-  args:{
+  args: {
     primary: false,
     size: "big",
     primaryBg: true,
-  }
-}
+  },
+};
 
 export const Fifth: Story = {
   args: {
     primary: false,
     size: "medium",
     primaryBg: true,
-  }
-}
-
+  },
+};
 
 export const Sixt: Story = {
   args: {
     primary: false,
     size: "small",
-    primaryBg: true
-  }
-}
+    primaryBg: true,
+  },
+};
 
 export const Seven: Story = {
   args: {
     primary: true,
     size: "big",
-    secundaryBg: true
-  }
-}
+    secundaryBg: true,
+  },
+};
 export const Eight: Story = {
   args: {
     primary: true,
     size: "medium",
-    secundaryBg: true
-  }
-}
+    secundaryBg: true,
+  },
+};
 export const Nine: Story = {
   args: {
     primary: true,
     size: "small",
-    secundaryBg: true
-  }
-}
+    secundaryBg: true,
+  },
+};
 export const Ten: Story = {
   args: {
     primary: false,
     size: "big",
-    secundaryBg: true
-  }
-}
+    secundaryBg: true,
+  },
+};
 export const Eleven: Story = {
   args: {
     primary: false,
     size: "medium",
-    secundaryBg: true
-  }
-}
+    secundaryBg: true,
+  },
+};
 export const Twelve: Story = {
   args: {
     primary: false,
     size: "small",
-    secundaryBg: true
-  }
-}
+    secundaryBg: true,
+  },
+};

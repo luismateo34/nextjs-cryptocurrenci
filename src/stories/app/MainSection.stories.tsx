@@ -18,11 +18,11 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     primary: true,
-    secundary: false
-  }
+    secundary: false,
+  },
 };
 export const Secundaty: Story = {
   args: {
-    secundary:true,
-  }
+    secundary: true,
+  },
 };

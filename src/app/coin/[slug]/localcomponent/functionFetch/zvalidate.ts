@@ -28,5 +28,5 @@ export const coin = z.array(
     atl_date: z.string(),
     roi: z.any(),
     last_updated: z.string(),
-  })
+  }),
 );
