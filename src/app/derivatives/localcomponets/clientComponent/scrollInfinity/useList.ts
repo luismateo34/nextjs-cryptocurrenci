@@ -21,7 +21,7 @@ export const useList = (initial: Deriv[]) => {
       queryKey: ["projects"],
       queryFn: ({ pageParam }) => fetchDerivate(pageParam),
       initialPageParam: 2,
-      getNextPageParam: (lastPages, allPages) => allPages.length + 1,
+      getNextPageParam: (_lastPages, allPages) => allPages.length + 1,
     });
   const datamemo = useMemo(() => {
     if (data === undefined) return [];
@@ -31,7 +31,7 @@ export const useList = (initial: Deriv[]) => {
     }, []);
     const total = [...initial, ...returndata];
     return total;
-  }, [data]);
+  }, [data, initial]);
 
   const inview = useMemo(() => {
     const result = datamemo.length === 0 ? true : false;
@@ -39,6 +39,7 @@ export const useList = (initial: Deriv[]) => {
   }, [datamemo]);
 
   const observerTarget = useRef(null);
+  const { current} = observerTarget;
   useEffect(() => {
     if (typeof window === "undefined" || !window.IntersectionObserver) {
       return;
@@ -52,15 +53,15 @@ export const useList = (initial: Deriv[]) => {
       { threshold: 0.5 },
     );
 
-    if (observerTarget.current) {
-      observer.observe(observerTarget.current);
+    if (current !== null) {
+      observer.observe(current);
     }
 
     return () => {
-      if (observerTarget.current) {
-        observer.unobserve(observerTarget.current);
+      if (current) {
+        observer.unobserve(current);
       }
     };
-  }, [inview]);
+  }, [inview, current, fetchNextPage]);
   return { status, error, datamemo, data, isFetchingNextPage, observerTarget };
 };

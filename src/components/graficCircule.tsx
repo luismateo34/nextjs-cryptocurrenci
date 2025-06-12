@@ -1,13 +1,14 @@
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import style from "./graficCircule.module.css";
 
+
 export const GraficCircule = ({
   porcentaje,
   title,
   className,
 }: {
   porcentaje: number;
-  title: string;
+  title?: string ;
   className?: string;
 }) => {
   const value = porcentaje >= 0 ? porcentaje : porcentaje * -1;

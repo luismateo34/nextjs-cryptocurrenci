@@ -24,7 +24,7 @@ export const DashBoard = () => {
       noselect();
       resetDate();
     };
-  }, []);
+  }, [ noShow, noselect, resetDate ]);
   if (symbol === "") return null;
   return (
     <section

@@ -19,6 +19,6 @@ export const LoaderComponent = () => {
     return () => {
       disable();
     };
-  }, []);
+  }, [disable]);
   return <>{action && <Loader />}</>;
 };
