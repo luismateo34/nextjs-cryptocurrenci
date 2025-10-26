@@ -1,5 +1,4 @@
 "use client";
-import { Button } from "@/components/ui/button";
 import { Store } from "@/app/derivatives/localcomponets/store/store";
 import { Selected } from "@/app/derivatives/localcomponets/store/selected";
 import { active } from "@/app/derivatives/localcomponets/store/active";
@@ -28,7 +27,7 @@ export const ButtonClient: FC<ButtonType> = ({
   const { select } = Selected((state) => state);
   return (
     <>
-      <Button
+      <button
         className={`${className} flex flex-row items-center`}
         onClick={() => {
           show();
@@ -45,7 +44,7 @@ export const ButtonClient: FC<ButtonType> = ({
         }}
       >
         {children}
-      </Button>
+      </button>
     </>
   );
 };

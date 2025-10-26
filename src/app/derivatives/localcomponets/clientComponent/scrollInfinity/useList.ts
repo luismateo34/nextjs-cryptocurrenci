@@ -1,19 +1,8 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { useEffect, useMemo, useRef } from "react";
-import { Derivate, Deriv } from "@/types/derivatives.types";
-const apiDeribaties = "/api/derivatives";
+import {  Deriv } from "@/types/derivatives.types";
+import { fetchDerivate } from './fetchderivate';
 
-export const fetchDerivate = async (pageParam: number): Promise<Deriv[]> => {
-  try {
-    const fetcher = await fetch(`${apiDeribaties}?pag=${pageParam}`);
-    const json: Derivate = await fetcher.json();
-    if (!fetcher.ok || fetcher.status === 500) throw new Error("error");
-    return json.derivateCripto;
-  } catch (e) {
-    console.log(e);
-    throw new Error();
-  }
-};
 
 export const useList = (initial: Deriv[]) => {
   const { data, error, fetchNextPage, isFetchingNextPage, status } =
@@ -21,7 +10,7 @@ export const useList = (initial: Deriv[]) => {
       queryKey: ["projects"],
       queryFn: ({ pageParam }) => fetchDerivate(pageParam),
       initialPageParam: 2,
-      getNextPageParam: (lastPages, allPages) => allPages.length + 1,
+      getNextPageParam: (_lastPages, allPages) => allPages.length + 1,
     });
   const datamemo = useMemo(() => {
     if (data === undefined) return [];
@@ -32,11 +21,6 @@ export const useList = (initial: Deriv[]) => {
     const total = [...initial, ...returndata];
     return total;
   }, [data]);
-
-  const inview = useMemo(() => {
-    const result = datamemo.length === 0 ? true : false;
-    return result;
-  }, [datamemo]);
 
   const observerTarget = useRef(null);
   useEffect(() => {
@@ -49,18 +33,24 @@ export const useList = (initial: Deriv[]) => {
           fetchNextPage();
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     );
 
-    if (observerTarget.current) {
+    if (observerTarget.current !== null) {
       observer.observe(observerTarget.current);
     }
 
     return () => {
-      if (observerTarget.current) {
+      if (observerTarget.current !== null) {
         observer.unobserve(observerTarget.current);
       }
     };
-  }, [inview]);
-  return { status, error, datamemo, data, isFetchingNextPage, observerTarget };
+  }, [datamemo]);
+
+  const loading =
+    isFetchingNextPage && data !== undefined && data?.pages.length <= 1227;
+
+  const nextdata = data !== undefined && data?.pages.length <= 1227;
+
+  return { status, error, datamemo,loading, observerTarget, nextdata };
 };

@@ -33,3 +33,18 @@
           75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
           100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
       }
+
+    /*<section className="w-screen h-screen z-30 fixed top-0 backdrop-blur-sm bg-black/40 flex flex-col justify-center items-center">*/
+.section{
+   width: 100vw;
+   height: 100vh;
+   z-index: 30;
+   position: fixed;
+   top: 0;
+   backdrop-filter: blur(5px);
+   background-color: rgba(0, 0, 0, 0.4);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center
+}

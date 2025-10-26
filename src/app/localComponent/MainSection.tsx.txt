@@ -7,6 +7,5 @@ describe("card section", (): void => {
   it("should render card section", (): void => {
     const { getByText } = render(<MainSection />);
     expect(getByText("Crypto market")).toBeDefined();
-    expect(getByText("and more")).toBeDefined();
   });
 });

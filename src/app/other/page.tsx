@@ -26,7 +26,7 @@ export default function Other() {
           Cryptocurrencies have a number of characteristics that differentiate
           them from traditional currencies:
         </p>
-        <div className="flex flex-row w-full h-max justify-start items-center mb-[5vh] md:mb-1 ">
+        <div className={styles.ulcontainer}>
           <ul className={styles.ulist}>
             <li>
               Decentralization: They are not subject to any central government

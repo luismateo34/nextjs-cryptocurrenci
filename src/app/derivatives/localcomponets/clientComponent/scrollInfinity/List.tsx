@@ -8,7 +8,7 @@ import { Deriv } from "@/types/derivatives.types";
 import { useList } from "./useList";
 
 export const List = ({ initial }: { initial: Deriv[] }) => {
-  const { data, datamemo, error, isFetchingNextPage, observerTarget, status } =
+  const { datamemo, error, loading, observerTarget, status, nextdata } =
     useList(initial);
   if (status === "error") return <span>error: {error?.message}</span>;
   else if (status === "pending") {
@@ -17,7 +17,7 @@ export const List = ({ initial }: { initial: Deriv[] }) => {
         <Skeleton />
       </div>
     );
-  } else if (status === "success")
+  } else if (status === "success") {
     return (
       <div className="w-full h-full flex flex-col justify-around gap-2 ">
         <ErrorBoundary fallback={<div>error en la carga de datos</div>}>
@@ -35,15 +35,13 @@ export const List = ({ initial }: { initial: Deriv[] }) => {
               />
             );
           })}
-          {isFetchingNextPage &&
-            data !== undefined &&
-            data?.pages.length <= 1227 && (
-              <div className="text-center text-slate-600 mt-5">
-                <span className={loader.loader}></span>
-              </div>
-            )}
+          {loading && (
+            <div className="text-center text-slate-600 mt-5">
+              <span className={loader.loader}></span>
+            </div>
+          )}
           <div className="text-center text-slate-600 mt-3">
-            {data !== undefined && data?.pages.length <= 1227 ? (
+            {nextdata ? (
               <div ref={observerTarget}></div>
             ) : (
               <p className="text-slate-600">No more posts to load</p>
@@ -52,4 +50,5 @@ export const List = ({ initial }: { initial: Deriv[] }) => {
         </ErrorBoundary>
       </div>
     );
+  }
 };

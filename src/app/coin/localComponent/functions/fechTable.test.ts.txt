@@ -1,0 +1,58 @@
+import { describe, vi, expect, it } from "vitest";
+import { Coint, jsonCoint } from "@/types/jsonCoin.types";
+import { data } from "./fechTable";
+
+const response: jsonCoint = {
+  coints: [
+    {
+      id: "1",
+      name: "bitcoin",
+      symbol: "bitcoinSimbol",
+    },
+  ],
+};
+const Mockfetchresolve = vi.fn(() =>
+  Promise.resolve({
+    ok: true,
+    status: 400,
+    json: () => Promise.resolve(response),
+  }),
+);
+const Mockfetchreject = vi.fn(() =>
+  Promise.reject({
+    ok: false,
+    status: 500,
+    json: () => {
+      throw new Error();
+    },
+  }),
+);
+const coin: Coint = {
+  id: "1",
+  name: "bitcoin",
+  symbol: "bitcoinSimbol",
+};
+
+const objErr: Coint = {
+  id: "error",
+  symbol: "error",
+  name: "error",
+};
+
+describe("data coin get data", () => {
+  it("It should return data", async () => {
+    global.fetch = vi.fn().mockImplementation(Mockfetchresolve);
+    const rest = await data("bitcoin");
+    expect(rest!).toEqual([coin]);
+  });
+  it("It should return void", async () => {
+    global.fetch = vi.fn().mockImplementation(Mockfetchresolve);
+    const rest = await data(undefined);
+    expect(rest).toBe(undefined);
+  });
+  it("It should throw an error", async () => {
+    global.fetch = vi.fn().mockImplementation(Mockfetchreject);
+    const rest = await data("bitcoin");
+    expect(rest!).toEqual([objErr]);
+  });
+});
