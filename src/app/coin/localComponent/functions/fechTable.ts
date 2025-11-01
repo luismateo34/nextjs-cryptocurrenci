@@ -1,12 +1,12 @@
 "use server";
-import { jsonCoint, Coint } from "@/types/jsonCoin.types";
+import { ListnamecriptoInterface } from "@/server/coint/domain/coint";
 
 const url = process.env.NEXT_PUBLIC_URL_DERIBATE;
 const apicoint = "/api/coin";
 
 export const data = async (
   name: string | undefined
-): Promise<Coint[] | undefined> => {
+): Promise<ListnamecriptoInterface[] | undefined> => {
   if (name === undefined) {
     return undefined;
   }
@@ -15,12 +15,12 @@ export const data = async (
     if (!data.ok || data.status === 500) {
       throw new Error();
     }
-    const json: jsonCoint = await data.json();
-    return json.coints;
+    const json: ListnamecriptoInterface[] = await data.json();
+    return json;
   } catch {
     return [
       {
-        id: "error",
+        id_coint: "error",
         symbol: "error",
         name: "error",
       },

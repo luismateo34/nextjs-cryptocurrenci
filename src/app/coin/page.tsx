@@ -3,7 +3,7 @@ import { Coints } from "@/app/coin/localComponent/tableCoint";
 import { Suspense } from "react";
 import { LoaderComponent } from "@/app/coin/localComponent/clientComponent/loader/loader";
 import { TableSkeleton } from "./localComponent/tableSkeleton";
-import { unstable_ViewTransition as ViewTransition,  } from "react";
+import { ViewTransition   } from "react";
 import style from "./page.module.css"
 
 export default async function Page({
@@ -35,7 +35,7 @@ export default async function Page({
                   key={crypto.randomUUID()}
                   fallback={<TableSkeleton />}
                 >
-                  <Coints name={name ?? ""} key={crypto.randomUUID()} />
+                  <Coints name={name ?? ""} key={globalThis.crypto.randomUUID()} />
                 </Suspense>
               )}
             </ViewTransition>

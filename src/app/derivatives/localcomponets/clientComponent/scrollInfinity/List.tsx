@@ -4,10 +4,10 @@ import { RowTable } from "@/app/derivatives/localcomponets/tableRow";
 import { v4 } from "uuid";
 import Skeleton from "@/app/derivatives/localcomponets/tableSkeleton";
 import loader from "./loader.module.css";
-import { Deriv } from "@/types/derivatives.types";
+import type { DerivateCriptointerface } from "@/server/derivate/domain/derivate";
 import { useList } from "./useList";
 
-export const List = ({ initial }: { initial: Deriv[] }) => {
+export const List = ({ initial }: { initial: DerivateCriptointerface[] }) => {
   const { datamemo, error, loading, observerTarget, status, nextdata } =
     useList(initial);
   if (status === "error") return <span>error: {error?.message}</span>;

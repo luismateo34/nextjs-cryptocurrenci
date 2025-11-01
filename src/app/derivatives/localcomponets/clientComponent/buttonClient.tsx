@@ -2,10 +2,10 @@
 import { Store } from "@/app/derivatives/localcomponets/store/store";
 import { Selected } from "@/app/derivatives/localcomponets/store/selected";
 import { active } from "@/app/derivatives/localcomponets/store/active";
-import { type Date } from "@/types/derivatives.types";
+import type { DerivateCriptointerface } from "@/server/derivate/domain/derivate";
 import { FC } from "react";
 
-interface ButtonType extends Date {
+interface ButtonType extends DerivateCriptointerface {
   children: string;
   className?: string;
   value: string;

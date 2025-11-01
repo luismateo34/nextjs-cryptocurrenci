@@ -1,10 +1,10 @@
 "use client";
 import { FC } from "react";
 import { ButtonClient } from "./clientComponent/buttonClient";
-import type { Date } from "@/types/derivatives.types";
 import { Selected } from "@/app/derivatives/localcomponets/store/selected";
+import { DerivateCriptointerface } from "@/server/derivate/domain/derivate";
 
-export const RowTable: FC<Date> = ({
+export const RowTable: FC<DerivateCriptointerface> = ({
   symbol,
   price,
   spread,
