@@ -10,7 +10,9 @@ import { useList } from "./useList";
 export const List = ({ initial }: { initial: DerivateCriptointerface[] }) => {
   const { datamemo, error, loading, observerTarget, status, nextdata } =
     useList(initial);
+  //----------------
   if (status === "error") return <span>error: {error?.message}</span>;
+//------------------------
   else if (status === "pending") {
     return (
       <div className="w-full h-full flex flex-col justify-around gap-2 ">

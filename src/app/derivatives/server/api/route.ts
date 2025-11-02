@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import {facadeDerivate } from "@/server/derivate/infrastructure/facades";
 import { SanitizedSql } from "@/server/sanitizedSql";
+import { pino } from "pino"
 /*
  *Derivatecripto = 1227 valores
  * 246 paginas de 5 elementos
@@ -16,7 +17,8 @@ export async function GET(req: NextRequest) {
     const Sanity = SanitizedSql(pag);
     const derivateCripto = await  facadeDerivate.find_derivate_by_Names(Number(Sanity))
     return NextResponse.json({ derivateCripto });
-  } catch {
+  } catch (e) {
+    pino().info(e)
     return NextResponse.json(
       { error: "Internal Server Error" },
       { status: 500 },

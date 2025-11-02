@@ -7,3 +7,6 @@ export interface DerivateCriptointerface {
   spread?: number;
   volume_24h: number;
 }
+export interface derivateJson {
+  derivateCripto: DerivateCriptointerface[];
+}

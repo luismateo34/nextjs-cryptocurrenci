@@ -3,3 +3,7 @@ export interface ListnamecriptoInterface {
   symbol: string;
   name: string;
 }
+
+export interface jsoncoint{
+  coins:ListnamecriptoInterface[]
+}
