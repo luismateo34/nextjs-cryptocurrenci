@@ -17,11 +17,11 @@ export const RowTable: FC<DerivateCriptointerface> = ({
   return (
     <div
       key={symbol}
-      className={`w-full rounded-md h-[10vh] grid grid-cols-2 gap-2 ${
+      className={`w-full rounded-md h-[10vh] grid grid-cols-2 gap-2  ${
         value === symbol ? "bg-white/20" : ""
       }`}
     >
-      <div className="col-start-1 col-end-2 place-self-center">{symbol}</div>
+      <div className="col-start-1 col-end-2 place-self-center rounded-md p-2 bg-sky-700">{symbol}</div>
       <div className="col-start-2 col-end-3 place-self-center">
         <ButtonClient
           key={symbol}
@@ -33,6 +33,7 @@ export const RowTable: FC<DerivateCriptointerface> = ({
           contract_type={contract_type}
           price_percentage_change_24h={price_percentage_change_24h}
           value={symbol}
+	  className={"bg-amber-300 text-red-800 border-purple-800 rounded-md p-2"}
         >
           view date
         </ButtonClient>

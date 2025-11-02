@@ -1,12 +1,12 @@
 import { create } from "zustand";
-import { Date } from "@/types/derivatives.types";
+import { DerivateCriptointerface } from "@/server/derivate/domain/derivate";
 
 interface Action {
   resetDate: () => void;
-  newDate: (state: Date) => void;
+  newDate: (state: DerivateCriptointerface) => void;
 }
 
-export const Store = create<Date & Action>((set) => ({
+export const Store = create<DerivateCriptointerface & Action>((set) => ({
   symbol: "",
   price_percentage_change_24h: 0,
   contract_type: "",

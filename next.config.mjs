@@ -7,7 +7,7 @@ allowedDevOrigins: ['127.0.0.1'],
   async headers() {
     return [
       {
-        source: "/api/:path*",
+        source: "/:path*",
         headers: [
           {
             key: "Access-Control-Allow-Origin",
