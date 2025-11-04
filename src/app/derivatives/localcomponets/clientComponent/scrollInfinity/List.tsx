@@ -4,11 +4,10 @@ import { RowTable } from "@/app/derivatives/localcomponets/tableRow";
 import { v4 } from "uuid";
 import Skeleton from "@/app/derivatives/localcomponets/tableSkeleton";
 import loader from "./loader.module.css";
-import type { DerivateCriptointerface } from "@/server/derivate/domain/derivate";
 import { useList } from "./useList";
 
-export const List = ({ initial }: { initial: DerivateCriptointerface[] }) => {
-  const { datamemo, error, loading, status, nextdata, ref } = useList(initial);
+export const ClientList = () => {
+  const { datamemo, error, loading, status, nextdata, ref } = useList();
   //----------------
   if (status === "error") return <span>error: {error?.message}</span>;
   //------------------------
@@ -18,11 +17,12 @@ export const List = ({ initial }: { initial: DerivateCriptointerface[] }) => {
         <Skeleton />
       </div>
     );
-  } else if (status === "success") {
-    return (
-      <div className="w-full h-full flex flex-col justify-around gap-2 ">
-        <ErrorBoundary fallback={<div>error en la carga de datos</div>}>
-          {datamemo.map((el) => {
+  }
+  return (
+    <>
+      <ErrorBoundary fallback={<div>error en la carga de datos</div>}>
+        {datamemo.length !== 0 &&
+          datamemo.map((el) => {
             return (
               <RowTable
                 contract_type={el.contract_type}
@@ -36,20 +36,15 @@ export const List = ({ initial }: { initial: DerivateCriptointerface[] }) => {
               />
             );
           })}
-          {loading && (
-            <div className="text-center text-slate-600 mt-2">
-              <span className={loader.loader}></span>
-            </div>
-          )}
-          <div className="flex flex-row justify-center mt-2 ">
-            {nextdata ? (
-              <div className="h-5 w-4" ref={ref}></div>
-            ) : (
-              <p className="text-slate-600">No more posts to load</p>
-            )}
+        {loading && (
+          <div className="text-center text-slate-600">
+            <span className={loader.loader}></span>
           </div>
-        </ErrorBoundary>
-      </div>
-    );
-  }
+        )}
+        <div className="flex flex-row justify-center" ref={ref}>
+          {!nextdata && <p className="text-slate-600">No more posts to load</p>}
+        </div>
+      </ErrorBoundary>
+    </>
+  );
 };

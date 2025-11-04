@@ -1,10 +1,9 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { useEffect, useMemo  } from "react";
+import { useEffect, useMemo } from "react";
 import { fetchDerivate } from "@/app/derivatives/localcomponets/fetchderivate";
-import type { DerivateCriptointerface } from "@/server/derivate/domain/derivate";
 import { useInView } from "react-intersection-observer";
 
-export const useList = (initial: DerivateCriptointerface[]) => {
+export const useList = () => {
   const { data, error, fetchNextPage, isFetchingNextPage, status } =
     useInfiniteQuery({
       queryKey: ["projects"],
@@ -13,27 +12,23 @@ export const useList = (initial: DerivateCriptointerface[]) => {
       getNextPageParam: (_lastPages, allPages) => allPages.length + 1,
     });
   //--------------------------------
-  const { ref,  inView } = useInView()
+  const { ref, inView } = useInView();
   //--------------------------------
-    const datamemo = useMemo(() => {
-      if (data?.pages === undefined) return [];
-      //-----------------
-      const clone = structuredClone(data.pages);
-      const initialdata = structuredClone(initial);
-      const returndata = clone?.reduce((acc, el) => {
-        const arr = [...acc, ...el];
-        return arr;
-      }, []);
-      //------------------
-        const arr = [...initialdata, ...returndata];
-        return arr;
-    },[data])
+  const datamemo = useMemo(() => {
+    if (data?.pages === undefined) return [];
+    const returndata = data.pages?.reduce((acc, el) => {
+      const arr = [...acc, ...el];
+      return arr;
+    }, []);
+    //------------------
+    return returndata;
+  }, [data]);
   //--------------------------------
   useEffect(() => {
-    if ( inView){
-      fetchNextPage()
+    if (inView) {
+      fetchNextPage();
     }
-      }, [fetchNextPage, inView]);
+  }, [fetchNextPage, inView]);
 
   const loading =
     isFetchingNextPage && data !== undefined && data?.pages.length <= 1227;

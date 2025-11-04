@@ -24,7 +24,6 @@ export const NavBar = ({
   className,
 }: TypeNav) => {
   const router = usePathname();
-
   return (
     <div className={style.container}>
       <nav className={style.nav_container}>
@@ -37,19 +36,19 @@ export const NavBar = ({
                   className={twMerge(
                     clsx(
                       {
-                        " hover:bg-gradient-to-r from-sky-600 to-emerald-500/90  active:bg-amber-200 ":
+                        " md:hover:bg-violet-300/65 md:active:bg-pink-800/70 ":
                           primary === true,
-                        " hover:bg-gradient-to-r from-white/40 to-black/15  active:border-orange-400":
+                        " md:hover:bg-gradient-to-r md:hover:from-white/40  md:hover:to-black/15  active:border-orange-400":
                           primary === false,
-                        "w-20 h-full": size === "small",
-                        "w-24 h-full": size === "medium",
-                        "w-28 h-full": size === "big",
+                        "w-4/12 h-[95%]": size === "small",
+                        "w-7/12 h-[95%]": size === "medium",
+                        "w-10/12 h-[95%]": size === "big",
                       },
-                      "flex flex-row justify-center items-center rounded-md font-medium ",
+                      "flex flex-row justify-center items-center rounded-md font-medium  lg:font-semibold lg:text-xl ",
                       `${
                         value === router
-                          ? " bg-gradient-to-r from-amber-400 from-10% via-amber-300 via-30% to-yellow-300 to-90% text-red-700"
-                          : " text-amber-300 "
+                          ? " md:bg-yellow-300 text-cyan-200 hover:text-teal-300  md:hover:text-stone-200 md:text-violet-900 "
+                          : " text-amber-400 "
                       }`,
                       className,
                     ),
