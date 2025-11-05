@@ -10,6 +10,7 @@ import { ListnamecriptoInterface } from "@/server/coint/domain/coint";
 import { Op } from "sequelize";
 import { ormCrypt } from "@/server/coint/domain/orm";
 import sqlize from "@/server/sqlize"
+import { pino} from "pino";
 
 @Table
 export class Listnamecriptos extends Model implements ListnamecriptoInterface {
@@ -37,7 +38,8 @@ export const dataclassQuery: ormCrypt = {
         },
       });
       return obj.rows;
-    } catch {
+    } catch(e) {
+      pino().info(e)
       return [];
     }
   },

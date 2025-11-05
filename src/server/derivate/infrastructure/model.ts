@@ -8,6 +8,7 @@ import {
 import { DerivateCriptointerface } from "@/server/derivate/domain/derivate";
 import { ormDerivate } from "@/server/derivate/domain/ormderivate";
 import sqlize from "@/server/sqlize";
+import { pino } from "pino";
 //-------------------------------
 @Table
 export class DerivateCriptos extends Model implements DerivateCriptointerface {
@@ -45,7 +46,7 @@ export const dataclassQuery: ormDerivate = {
       });
       return obj;
     } catch (e) {
-      console.log(e)
+      pino().info(e)
       return [];
     }
   },

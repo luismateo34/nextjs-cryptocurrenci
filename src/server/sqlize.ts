@@ -1,11 +1,11 @@
 import { Sequelize } from "sequelize-typescript";
-import pg, { Pool} from "pg";
-import { attachDatabasePool } from "@vercel/functions"
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-});
-
-attachDatabasePool(pool);
+import pg  from "pg";
+//import pg, { Pool} from "pg";
+//import { attachDatabasePool } from "@vercel/functions"
+//const pool = new Pool({
+  //connectionString: process.env.DATABASE_URL,
+//});
+//attachDatabasePool(pool);
 //---singleton
 const globalForSqlize = global as unknown as {
   sqlize: Sequelize;
