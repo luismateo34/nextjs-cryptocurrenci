@@ -28,7 +28,7 @@ module.exports = {
         market: el.market,
         price: el.price,
         price_percentage_change_24h: el.price_percentage_change_24h,
-        symbol: el.price,
+        symbol: el.symbol,
         volume_24h:el.volume_24h,
         spread: el.spread,
         createdAt: new Date(),

@@ -7,14 +7,19 @@ export const Coints = async ({ name }: { name: string }) => {
   const coint = (await data(name)) ?? [];
   const isvoid = coint.length === 0;
   const isreject = coint.map((el) => el.id_coint)[0] === "error";
-  if (isvoid || isreject) {
+  if (isreject) {
     return (
       <div>
         <div> error en el servicio</div>
       </div>
     );
   }
-  if (!isvoid && !isreject) {
-    return <CointList Listcript={coint} key={globalThis.crypto.randomUUID()} />;
+  if (isvoid) {
+    return (
+      <div>
+        <div> coin not found </div>
+      </div>
+    );
   }
+  return <CointList Listcript={coint} key={globalThis.crypto.randomUUID()} />;
 };

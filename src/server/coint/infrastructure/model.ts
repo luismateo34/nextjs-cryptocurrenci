@@ -12,7 +12,7 @@ import { ormCrypt } from "@/server/coint/domain/orm";
 import sqlize from "@/server/sqlize"
 import { pino} from "pino";
 
-@Table
+@Table({ tableName:"Listnamecriptos"})
 export class Listnamecriptos extends Model implements ListnamecriptoInterface {
   @PrimaryKey
   @Column({ primaryKey: true })

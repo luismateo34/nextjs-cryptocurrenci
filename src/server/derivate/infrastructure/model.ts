@@ -10,7 +10,7 @@ import { ormDerivate } from "@/server/derivate/domain/ormderivate";
 import sqlize from "@/server/sqlize";
 import { pino } from "pino";
 //-------------------------------
-@Table
+@Table({ tableName:"DerivateCriptos"})
 export class DerivateCriptos extends Model implements DerivateCriptointerface {
   @Column
   market!: string;

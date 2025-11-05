@@ -15,9 +15,6 @@ importers:
       '@tanstack/react-query':
         specifier: ^5.48.0
         version: 5.80.6(react@19.2.0)
-      '@vercel/functions':
-        specifier: 3.2.0
-        version: 3.2.0
       chart.js:
         specifier: 4.4.2
         version: 4.4.2
@@ -1929,19 +1926,6 @@ packages:
     resolution: {integrity: sha512-7L8NdsQlCJ8T106Gbz/AjzM4QKWVsoQbKpB9bMBGcIZswUuAnJMHpvbqGW3RBqLHCIwX4XZ5fxSBHEFcK2h9wA==}
     cpu: [x64]
     os: [win32]
-
-  '@vercel/functions@3.2.0':
-    resolution: {integrity: sha512-JK50S8CJFsw9wdFfNYqS9wKIu8ok+n5JlBBBtEIB+/YuVBfW80OY9chAaYoYweA7firKH6c3H3JfyCw3X13jvw==}
-    engines: {node: '>= 20'}
-    peerDependencies:
-      '@aws-sdk/credential-provider-web-identity': '*'
-    peerDependenciesMeta:
-      '@aws-sdk/credential-provider-web-identity':
-        optional: true
-
-  '@vercel/oidc@3.0.3':
-    resolution: {integrity: sha512-yNEQvPcVrK9sIe637+I0jD6leluPxzwJKx/Haw6F4H77CdDsszUn5V3o96LPziXkSNE2B83+Z3mjqGKBK/R6Gg==}
-    engines: {node: '>= 20'}
 
   '@vitejs/plugin-react@4.2.1':
     resolution: {integrity: sha512-oojO9IDc4nCUUi8qIR11KoQm0XFFLIwsRBwHRR4d/88IWghn1y6ckz/bJ8GHDCsYEJee8mDzqtJxh15/cisJNQ==}
@@ -7026,12 +7010,6 @@ snapshots:
 
   '@unrs/resolver-binding-win32-x64-msvc@1.7.11':
     optional: true
-
-  '@vercel/functions@3.2.0':
-    dependencies:
-      '@vercel/oidc': 3.0.3
-
-  '@vercel/oidc@3.0.3': {}
 
   '@vitejs/plugin-react@4.2.1(vite@5.4.19(@types/node@20.11.24)(terser@5.41.0))':
     dependencies:
