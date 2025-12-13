@@ -1,11 +1,9 @@
 import { Sequelize } from "sequelize-typescript";
 import pg from "pg";
 
-class SqlizeSingleton {
-  static instance: Sequelize;
-  static getInstance() {
-    if (!SqlizeSingleton.instance) {
-      SqlizeSingleton.instance = new Sequelize(process.env.DATABASE_URL, {
+class SequelizeSingleton {
+  static instance: SequelizeSingleton
+  private sequelize = new Sequelize(process.env.DATABASE_URL, {
         dialect: "postgres",
         dialectModule: pg,
         pool: {
@@ -14,11 +12,16 @@ class SqlizeSingleton {
           idle: 1000,
           acquire: 2000,
         },
-      });
-    }
-    return SqlizeSingleton.instance;
+      })
+  static getInstance() {
+    if (!SequelizeSingleton.instance) {
+      SequelizeSingleton.instance =  new SequelizeSingleton()}
+    return SequelizeSingleton.instance;
+  }
+  get orm(){
+    return this.sequelize
   }
 }
 
-const sqlize = SqlizeSingleton.getInstance()
+const sqlize = SequelizeSingleton.getInstance().orm
 export default sqlize
