@@ -3,7 +3,6 @@ import { Coints } from "@/app/coin/localComponent/tableCoint";
 import { Suspense } from "react";
 import { LoaderComponent } from "@/app/coin/localComponent/clientComponent/loader/loader";
 import { TableSkeleton } from "./localComponent/tableSkeleton";
-import { ViewTransition   } from "react";
 import style from "./page.module.css"
 
 export default async function Page({
@@ -29,7 +28,6 @@ export default async function Page({
           </div>
           <div className={style.list}>
             {/* list of criptocurrency*/}
-            <ViewTransition>
               {name !== undefined && (
                 <Suspense
                   key={crypto.randomUUID()}
@@ -38,7 +36,6 @@ export default async function Page({
                   <Coints name={name ?? ""} key={globalThis.crypto.randomUUID()} />
                 </Suspense>
               )}
-            </ViewTransition>
           </div>
         </div>
       </main>

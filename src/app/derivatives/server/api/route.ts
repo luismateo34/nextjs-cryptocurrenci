@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
-import {facadeDerivate } from "@/server/derivate/infrastructure/facades";
+import { facadeDerivate } from "@/server/derivate/infrastructure/facades";
 import { SanitizedSql } from "@/server/sanitizedSql";
-import { pino } from "pino"
+import pino from "pino";
 /*
  *Derivatecripto = 1227 valores
  * 246 paginas de 5 elementos
@@ -15,10 +15,14 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ message: "coint not found" });
     }
     const Sanity = SanitizedSql(pag);
-    const derivateCripto = await  facadeDerivate.find_derivate_by_Names(Number(Sanity))
+    const derivateCripto = await facadeDerivate.find_derivate_by_Names(
+      Number(Sanity),
+    );
     return NextResponse.json({ derivateCripto });
   } catch (e) {
-    pino().info(e)
+    const err = e as Error
+    const logger = pino().child({ origen: "derivate server api" });
+    logger.info(err.message ?? "error en la busqueda de derivados");
     return NextResponse.json(
       { error: "Internal Server Error" },
       { status: 500 },

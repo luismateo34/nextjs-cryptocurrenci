@@ -8,9 +8,9 @@ import {
 import { DerivateCriptointerface } from "@/server/derivate/domain/derivate";
 import { ormDerivate } from "@/server/derivate/domain/ormderivate";
 import sqlize from "@/server/sqlize";
-import { pino } from "pino";
+import pino from "pino";
 //-------------------------------
-@Table({ tableName:"DerivateCriptos"})
+@Table({ tableName: "DerivateCriptos" })
 export class DerivateCriptos extends Model implements DerivateCriptointerface {
   @Column
   market!: string;
@@ -41,12 +41,14 @@ export const dataclassQuery: ormDerivate = {
 
       //const obj = await DerivateCriptos.findAll()
       const obj = await DerivateCriptos.findAll({
-	limit: pageLimit,
-	offset: offsetSalt,
+        limit: pageLimit,
+        offset: offsetSalt,
       });
       return obj;
     } catch (e) {
-      pino().info(e)
+      const err = e as Error;
+      const logger = pino().child({ origen: "derivate model" });
+      logger.info(err.message ?? "error en la busqueda de derivados");
       return [];
     }
   },

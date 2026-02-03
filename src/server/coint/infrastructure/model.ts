@@ -10,7 +10,7 @@ import { ListnamecriptoInterface } from "@/server/coint/domain/coint";
 import { Op } from "sequelize";
 import { ormCrypt } from "@/server/coint/domain/orm";
 import sqlize from "@/server/sqlize"
-import { pino} from "pino";
+import pino from "pino";
 
 @Table({ tableName:"Listnamecriptos"})
 export class Listnamecriptos extends Model implements ListnamecriptoInterface {
@@ -39,7 +39,9 @@ export const dataclassQuery: ormCrypt = {
       });
       return obj.rows;
     } catch(e) {
-      pino().info(e)
+      const err = e as Error
+      const logger = pino().child({ origen: "coint model" });
+      logger.info(err.message ?? "error en la busqueda de coint");
       return [];
     }
   },
